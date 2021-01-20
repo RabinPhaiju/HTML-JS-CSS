@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(62, 143, 172, 0.75);
+    padding: 6px;
+}
+
+.navbar .navleft,
+.navbar .navright {
+    display: flex;
+    font-size: 14px;
+}
+
+.navbar .navitem {
+    padding: 6px 8px;
+    margin: 4px;
+    background-color: rgb(64, 144, 172);
+    border-radius: 3px;
+    color: white;
+}
+
+.navbar .navmiddle {
+    color: white;
+    font-family: "Comic Sans", "Comic Sans MS", cursive;
+    font-size: 18px;
+    padding: 6px;
+    position: relative;
+    left: -90px;
+}
+
+.navbar .navitem-search input {
+    border-radius: 2px;
+    background-color: rgb(64, 144, 172);
+    border-color: #0000;
+    margin-top: 4px;
+    padding: 5px;
+    width: 120px;
+}
+
+.navbar .navitem-search input:focus {
+    background-color: white;
+    outline: none !important;
+}
+
+.navbar .navitem:hover,
+.stickybar .stickyright:hover {
+    color: rgba(219, 217, 217, 0.9);
+}
+
+.stickybar {
+    position: fixed;
+    z-index: 2;
+    top: 50px;
+    width: 100%;
+    background-color: rgb(47, 87, 88, 0.4);
+    color: white;
+    font-size: 0.9em;
+    display: flex;
+    overflow-x: hidden;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+
+.body {
+    position: relative;
+    top: 90px;
+    display: flex;
+    flex-flow: nowrap;
+    padding: 8px;
+    height: 100%;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.context-menu {
+    cursor: context-menu;
+}
+
+.body .box {
+    font-size: 14px;
+    color: #0009;
+    background-color: rgb(219, 222, 221, 0.96);
+    border-radius: 4px;
+    margin: 6px;
+    min-width: 230px;
+}
+
+.body .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+    color: rgb(73, 72, 72);
+    font-weight: 600;
+}
+
+.body .box .card {
+    display: flex;
+    width: 91%;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 10px;
+}
+
+.body .box .card i {
+    display: none;
+}
+
+.body .box .card:hover i {
+    display: inline;
+}
+
+.body .box .card:hover {
+    background-color: rgba(239, 241, 241, 0.8);
+}
+
+.body .button {
+    cursor: pointer;
+    padding: 0 10px 6px 12px;
+}
+
+.body .box .button:hover {
+    color: rgb(141, 140, 140);
+}
+
+.body .todo {
+    height: 185px;
+}
+
+.body .doing {
+    height: 210px;
+    display: none;
+}
+
+.body .box .button .add {
+    background-color: rgb(128, 128, 0);
+    padding: 8px;
+    color: white;
+    font-size: 17px;
+    border-radius: 4px;
+}
+
+.body .box .button .add:hover {
+    background-color: rgb(128, 128, 0, 0.8);
+}
+
+.body .box .button i {
+    padding: 3px;
+    font-size: 2em;
+}
+
+.body .testing,
+.body .deploying {
+    height: 100px;
+}
+
+.body .done {
+    height: 50px;
+}
+
+.body .add_another {
+    padding-top: 8px;
+    height: 30px;
+}
+
+.body .form {
+    height: 140px;
+    margin-right: 10px;
+    display: none;
+}
+
+.body .box textarea {
+    border-color: #fff0;
+    cursor: text;
+}
+
+.body .box textarea:focus {
+    outline: none !important;
+}

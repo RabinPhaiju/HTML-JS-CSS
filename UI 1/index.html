@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Assignment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+
+<body>
+
+
+
+
+    <div class="navbar">
+        <div class="navleft">
+            <div class="navitem cursor"><i class="fas fa-home"></i></div>
+            <div class="navitem cursor"><i class="fas fa-th-list"></i> Boards</div>
+            <div class="navitem-search"><input type="search"></div>
+        </div>
+        <div class="navmiddle">
+            <span class="title"> Tralala</span>
+        </div>
+        <div class="navright">
+            <div class="navitem cursor"><i class="fas fa-plus"></i></div>
+            <div class="navitem cursor"><i class="fas fa-user-alt"></i></div>
+        </div>
+    </div>
+    <div class="stickybar">
+        <div class="stickyleft context-menu">
+            Frontend Training
+        </div>
+        <div class="stickyright cursor">
+            <i class="fas fa-ellipsis-v"></i> Show menu
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="todo box">
+            <div class="header">
+                <div>To Do</div>
+                <span class="cursor">...</span>
+            </div>
+            <div class="card"><span> Learn HTML</span> <span><i class="task-edit fas fa-pencil-alt pointer"></i></span></div>
+            <div class="card"><span>Learn CSS</span><span><i class="task-edit fas fa-pencil-alt pointer"></i></span></div>
+            <div class="card"><span>Learn JavaScript</span><span><i class="task-edit fas fa-pencil-alt pointer"></i></span></div>
+            <div class="button" onclick="addcard()">+ Add another card</div>
+        </div>
+        <div class="doing box" id="doing">
+            <div class="header">
+                <div>Doing</div>
+                <span class="cursor">...</span>
+            </div>
+            <div class="card"><span> Prepare resume</span></div>
+            <textarea rows="3" placeholder="Enter a title for this card..." class="card"></textarea>
+            <div class="button">
+                <span class="add">Add Card</span>
+                <span><i class="fas fa-times"></i></span>
+            </div>
+        </div>
+        <div class="testing box">
+            <div class="header">
+                <div>Testing/Verifying</div>
+                <span class="cursor">...</span>
+            </div>
+            <div class="card"><span> Twitter app frontend</span> </div>
+            <div class="button" onclick="addcard()">+ Add another card</div>
+        </div>
+        <div class="deploying box">
+            <div class="header">
+                <div>Deploying</div>
+                <span class="cursor">...</span>
+            </div>
+            <div class="card"><span> Twitter app backend</span> </div>
+            <div class="button" onclick="addcard()">+ Add another card</div>
+        </div>
+        <div class="done box">
+            <div class="header">
+                <div>Done</div>
+                <span class="cursor">...</span>
+            </div>
+
+            <div class="button" onclick="addcard()">+ Add card</div>
+        </div>
+        <div class="add_another box" id="addanotherlist">
+            <div class="button" onclick="addanotherlist()">+ Add another list</div>
+        </div>
+        <div class="form box" id="form">
+
+            <textarea rows="3" placeholder="Enter list title..." class="card"></textarea>
+            <div class="button">
+                <span class="add">Add List</span>
+                <span><i class="fas fa-times"></i></span>
+            </div>
+        </div>
+        <div>
+            .
+        </div>
+    </div>
+</body>
+<script>
+    function addanotherlist() {
+        document.getElementById("form").style.display = "block";
+        document.getElementById("addanotherlist").style.display = "none";
+    }
+
+    function addcard() {
+        document.getElementById("doing").style.display = "block";
+    }
+</script>
+
+</html>
