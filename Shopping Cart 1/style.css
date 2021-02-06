@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #ebd6c2a1,#ebaf61bf, #f578d6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass {
+    min-height: 80vh;
+    margin: auto;
+    width: 96%;
+    background: #ffffff18;
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(1rem);
+    display: flex;
+}
+
+
+.dashboard,.personal-detail {
+    background:  #ffffff22;
+    border-radius: 2rem;
+    flex: 2;
+    padding: 40px 2%;
+}
+.personal-detail {
+    background:  #ffffff52;
+}
+.personal-detail-address,.personal-detail-pincode,.personal-detail-card{
+    padding: 10px;
+}
+.personal-detail-address-card,.personal-detail-pincode-card{
+    padding: 10px;
+    background-color: rgba(199, 194, 182, 0.327);
+    border-radius: 6px;
+}
+
+.dashboard .back-button,.link{
+    display: flex;
+    align-items: center;
+    width: 120px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.payment{
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.606);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(103, 103, 103, 0.96)x #888888;
+    cursor: pointer;
+}
+.payment-item{
+    display: flex;
+    align-items: center;
+}
+
+.payment-item input[type=radio]{
+    margin-right: 6px;
+}
+.hr{
+    border-top: 1px solid rgba(110, 110, 110, 0.354);
+   padding: 10px 0 ;
+}
+
+img{
+    /* border-radius: 50%; */
+    height: 80px;
+}
+.img-icon{
+    height: 28px;
+    padding-right: 10px;
+}
+
+.img-icon1{
+    height: 16px;
+}
+.dashboard .user {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.dashboard .user .avatar-detail{
+    padding: 4px;
+    margin-left: 10px;
+}
+.links{
+    padding: 20px 0;
+}
+.cart {
+    flex: 6;
+    padding: 34px;
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+   width: 50vw;
+   -webkit-overflow-scrolling: touch;
+   -webkit-scrollbar-display: none;
+  
+    flex-wrap: nowrap;
+  overflow-x: scroll;
+ 
+}
+.transaction{
+ display: flex;
+ flex-direction: column;
+    flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.card{
+    flex: 0 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow:  rgba(161, 161, 161, 0.116) 2px 2px;
+}
+.card img{
+    padding: 12px;
+    height: 140px;
+}
+
+.card-detail, .transaction{
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.307);
+    border-radius: 10px;
+    
+}
+.transaction .forms{
+    display: flex;
+    color: black;
+    justify-content: space-evenly;
+}
+.form1,.form2,.form3{
+    flex: 1;
+    text-align: center;
+    margin: 8px;
+}
+.forms input,select{
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    background: rgba(128, 128, 128, 0.313);
+    display: inline-block;
+    border: transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.history img{
+    height: 60px;
+    border-radius: 20px;
+    padding-right: 10px;
+}
+.forms,.history-left{
+   text-align:justify;
+    display: flex;
+}
+.history-item{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+.history-item-price h3{
+color: rgba(255, 0, 0, 0.803);
+}
+
+.personal-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.personal-detail-checkout .cart-item,.total-price,.total-tax,.total-sum{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.personal-detail-checkout img{
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 6px;
+}
+.personal-detail-checkout .pay-now{
+    margin: 20px 0;
+}
+.personal-detail-checkout .pay-button{
+    width: 200px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 20px;
+    color: white;
+    background: rgb(69, 35, 140);
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ES6</h2>
+    <h3>1. let</h3>
+    <script>
+        if(true){
+            let x = 10;
+            document.write('<br> let x = 10');
+            document.write('<br>inside the block of if: '+x);
+        }
+        document.write('<br>outside the block of if /cant access/: '+ 'error');
+    </script>
+    <h3>2 .Const</h3>
+    <p>
+
+        const marks = [10,20,30];<br>
+        marks.push(40);
+    </p>
+    <script>
+        const marks = [10,20,30];
+        marks.push(40);
+        document.write('<br> makrs'+marks.toString());
+        document.write('<br> array are refference type');
+    </script>
+    <h3>3. Default parameter</h3>
+    <p> var displayMessage=(message='this is a message')=>{<br>
+        document.write('<br>'+message);<br>
+    } <br>
+    displayMessage('hello'); <br>
+    displayMessage();</p>
+    <script>
+        var displayMessage=(message='this is a message')=>{
+            document.write('<br>'+message);
+        }
+        displayMessage('hello');
+        displayMessage();
+    </script>
+    <h3>4. spread operator</h3>
+    <p> var names = ['jim','john','rob']; <br>
+        document.write(...names,'rabin');</p>
+    <script>
+        var names = ['jim','john','rob'];
+        document.write(...names,'rabin');
+    </script>
+    <h4>5. Template String</h4>
+    <p> var message = `hello rbain`; <br>
+        document.write(`message : ${message}`);</p>
+    <script>
+        var message = `hello rbain`;
+        document.write(`message : ${message}`);
+    </script>
+    <h3>6. String methods</h3>
+    <p> var message = 'rabinphaiju15@gmail.com'; <br>
+        document.write(message.repeat(3)); <br>
+        document.write(message.startsWith('m')); <br>
+        document.write(message.includes('gmail')); <br>
+        document.write(message.endsWith('gmail.com'));</p>
+    <script>
+        var message = 'rabinphaiju15@gmail.com';
+        document.write('<br>'+message.repeat(3));
+        document.write('<br>'+message.startsWith('m'));
+        document.write('<br>'+message.includes('gmail'));
+        document.write('<br>'+message.endsWith('gmail.com'));
+    </script>
+    <h3>7. sets</h3>
+    <p>   var animals = new Set(); <br>
+        animals.add('dog');<br>
+        animals.add('cat');<br>
+        animals.add('mouse');<br>
+        document.write(' size : '+animals.size);<br>
+        animals.add('mouse');<br>
+        document.write(' size : '+animals.size);<br>
+        animals.delete('mouse');<br>
+        document.write(' size : '+animals.size);<br>
+        
+        var people = ['rabin','john','julia','rabin'];<br>
+        var peoples = new Set(people);<br>
+        document.write(' size list : '+people.length);<br>
+        document.write('size set : '+peoples.size);</p>
+    <script>
+        var animals = new Set();
+        animals.add('dog');
+        animals.add('cat');
+        animals.add('mouse');
+        document.write('<br> size : '+animals.size);
+        animals.add('mouse');
+        document.write('<br> size : '+animals.size);
+        animals.delete('mouse');
+        document.write('<br> size : '+animals.size);
+        
+        var people = ['rabin','john','julia','rabin'];
+        var peoples = new Set(people);
+        document.write('<br> size list : '+people.length);
+        document.write('<br> size set : '+peoples.size);
+
+    </script>
+</body>
+</html>
