@@ -1,0 +1,67 @@
+// Variables
+$main-color: #666;
+$primary-color: rgb(115, 115, 118);
+$white-color: rgb(255, 255, 255);
+
+// Mixins
+@mixin shaping($radius, $bg, $color){
+    border-radius:$radius;
+    background-color:$bg;
+    color:$color;
+}
+
+// Styles
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 96%;
+    margin: auto;
+}
+
+.container{
+    .nav-item{
+        @include shaping(2px ,$primary-color ,$white-color );
+        padding: 4px 8px;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+    .navbar{
+        background-color: $main-color;
+        display: flex;
+        justify-content: space-between;
+        .nav-item-right{
+            justify-content: space-around;
+            display: flex;
+        }
+    }
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .product-item{
+            height: 200px;
+            width: 200px;
+            min-width: 200px;
+        @include shaping(2px ,#645 ,$white-color );
+        margin: 2px;
+        text-align: center;
+        }
+    }
+    .footer{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 8px;
+        margin: 8px;
+        background-color: $main-color;
+        ul >li{
+            list-style: none;
+            font-family: sans-serif;
+        }
+    }
+}
+
+
+
