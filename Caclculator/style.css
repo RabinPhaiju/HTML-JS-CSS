@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+.calc{
+    width: 250px;
+    margin: 20px auto;
+    background: rgba(128, 128, 128, 0.541);
+    border-radius: 4px;
+    padding: 2px;
+}
+.calc .display h1{
+    background: rgba(128, 128, 128, 0.669);
+    text-align: right;
+    padding: 2px 6px;
+    border-radius: 4px;
+    height: 40px;
+    overflow: hidden;
+}
+.calc .keys{
+    display: flex;
+}
+
+.calc .keys p{
+    width: 60px;
+    height: 60px;
+    background: rgba(128, 128, 128, 0.381);
+    margin: 4px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
