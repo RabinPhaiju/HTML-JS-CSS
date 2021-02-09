@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+.calc{
+    width: 250px;
+    margin: 20px auto;
+    background: rgba(128, 128, 128, 0.46);
+    border-radius: 4px;
+    padding: 2px;
+}
+.calc .display{
+    display: flex;
+}
+.calc .display .display-text{
+    flex: 85;
+}
+.calc .display .clear{
+    flex:15
+}
+.calc .display h1{
+    background: rgba(255, 255, 255, 0.51);
+    text-align: right;
+    padding: 2px 6px;
+    border-radius: 4px;
+    height: 40px;
+    overflow: hidden;
+}
+.calc .keys{
+    display: flex;
+}
+
+.dot, .one, .two,.three,.four,.five,.six,.seven,.eight,.nine{
+   background: rgba(255, 255, 255, 0.503);
+}
+.leftB,.rightB,.percentage,.divide,.times,.diff,.sum,.zero{
+    background: rgba(128, 128, 128, 0.524);
+}
+.total{
+    background: #216be1d2;
+}
+.clear{
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 4px;
+    margin-right: 2px;
+    text-align: center;
+    padding-top: 8px;
+    font-size: 22px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.calc .keys p{
+    width: 60px;
+    height: 50px;
+    margin: 4px;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 22px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}

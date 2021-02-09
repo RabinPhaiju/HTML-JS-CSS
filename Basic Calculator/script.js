@@ -19,6 +19,11 @@ const zero = document.querySelector(".zero");
 const sum = document.querySelector(".sum");
 const total = document.querySelector(".total");
 
+const leftB = document.querySelector(".leftB");
+const rightB = document.querySelector(".rightB");
+const percentage = document.querySelector(".percentage");
+const dot = document.querySelector(".dot");
+
 var number = display.innerHTML;
 
 function middle() {
@@ -30,7 +35,7 @@ function middle() {
     }
     number = number.replace(/\d{3}(?=.)/g, "$& ");
   }
-  if (number.length > 16) {
+  if (number.length > 12) {
     display.style.fontSize = "18px";
   }
 }
@@ -92,11 +97,20 @@ one.addEventListener("click", () => {
   display.innerHTML = number;
 });
 
+dot.addEventListener("click", () => {
+  middle();
+  if (signCheck() == "true") {
+    number = number + ".";
+  }
+  display.innerHTML = number;
+});
+
 function signCheck() {
   if (
     number[number.length - 1] != "/" &&
     number[number.length - 1] != "*" &&
     number[number.length - 1] != "+" &&
+    number[number.length - 1] != "." &&
     number[number.length - 1] != "-"
   ) {
     return "true";
