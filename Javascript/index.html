@@ -9,14 +9,20 @@
     <style>
         .navlist a {
             text-decoration: none;
-            background: rgba(128, 128, 128, 0.544);
-            padding: 4px;
-            border-radius: 4px;
             color: black;
+        }
+
+        .navlist>div {
+            background: rgba(128, 128, 128, 0.544);
+            padding: 6px;
+            margin: 8px;
+            border-radius: 4px;
         }
 
         .navlist {
             width: 40%;
+            display: flex;
+            flex-wrap: wrap;
             margin: auto;
             text-align: center;
         }
@@ -25,9 +31,12 @@
 
 <body>
     <div class="navlist">
-        <a href="./js.html">Java Script</a>
-        <a href="./todo-app.html">Todo App</a>
-        <a href="./ES6.html">ES6</a>
+        <div><a href="./js.html">Java Script</a></div>
+        <div><a href="./todo-app.html">Todo App</a></div>
+        <div><a href="./ES6.html">ES6</a></div>
+        <div><a href="./quiz.html">Quiz</a></div>
+        <div><a href="./guess_number.html">Number Guess</a></div>
+        <div><a href="./ballon_pop.html">Pop the ballon</a></div>
     </div>
 </body>
 

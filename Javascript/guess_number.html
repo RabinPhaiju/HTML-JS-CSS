@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess a number</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 60%;
+            min-width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .title {
+            background: rgba(240, 62, 240, 0.837);
+            width: 100%;
+            border-radius: 4px;
+            padding: 4px;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .game {
+            background: rgba(128, 61, 252, 0.79);
+            min-height: 200px;
+            border-radius: 4px;
+        }
+
+        input {
+            border: none;
+            padding: 10px;
+            margin: 4px;
+            border-radius: 4px;
+            width: 40%;
+        }
+
+        #button,
+        .restart {
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 60px;
+            background: gray;
+            color: white;
+            cursor: pointer;
+        }
+
+        .input_container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .prev_guess {
+            overflow: hidden;
+        }
+
+        .restart {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Guess a Number</div>
+            <p>Try and guess a random number between 1 and 50</p>
+            <p>You have 10 attempts</p>
+        </div>
+        <div class="game">
+            <div class="input_container">
+                <input type="number" id="input" min="1" max="50">
+                <div id="button">Guess</div>
+            </div>
+            <p class="prev_guess">Previous guessess : </p>
+            <p class="ans_guess"></p>
+            <p class="result"></p>
+        </div>
+        <div class="restart">restart</div>
+    </div>
+</body>
+<script>
+    var prev_guess = []
+    var guess = 0;
+    var rand_number = Math.floor((Math.random() * 50) + 1);
+    console.log(rand_number)
+    var input_button = document.getElementById('button')
+    var restart = document.querySelector('.restart')
+
+    function input_action() {
+        var input_number = document.getElementById("input").value;
+        if (input_number) {
+            prev_guess.push(input_number)
+            guess = guess + 1
+        }
+
+        if (input_number > rand_number) {
+            document.querySelector('.ans_guess').innerHTML = 'Your guess higher'
+        } else if (input_number < rand_number) {
+
+            document.querySelector('.ans_guess').innerHTML = 'Your guess lower'
+        }
+        else {
+            document.querySelector('.ans_guess').innerHTML = 'Your guess is right'
+            input_button.style.visibility = 'hidden'
+            restart.style.visibility = 'visible'
+        }
+
+        if (guess >= 10) {
+            input_button.style.visibility = 'hidden'
+            restart.style.visibility = 'visible'
+        }
+        show()
+    }
+    function show() {
+        var html = 'prev guess : ';
+        prev_guess.map((guess) => {
+            html += `${guess},`;
+        })
+        document.querySelector('.prev_guess').innerHTML = html
+    }
+    input_button.addEventListener('click', input_action)
+    restart.addEventListener('click', () =>
+        location.reload()
+    )
+    show()
+</script>
+
+</html>

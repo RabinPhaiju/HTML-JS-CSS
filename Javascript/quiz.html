@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            background: rgba(165, 52, 240, 0.782);
+            border-radius: 4px;
+        }
+
+        .container ul li {
+            list-style: none;
+            cursor: pointer;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Choose the correct answer!</h1>
+        <div class="question"></div>
+        <ul class="choice"></ul>
+        <div class="message"></div>
+        <div class="result"></div>
+    </div>
+</body>
+<script>
+    var question = [{
+        question: 'What is the capital of Nepal?',
+        choices: ['Bhaktapur', 'kathmandu', 'Jhapa', 'Biratnagar'],
+        correct: 2
+    }, {
+        question: 'What is the capital of India?',
+        choices: ['Rajesthan', 'kathmandu', 'Delhi', 'Biratnagar'],
+        correct: 3
+    }, {
+        question: 'What is the capital of Japan?',
+        choices: ['Tokyo', 'kathmandu', 'Jhapa', 'Biratnagar'],
+        correct: 1
+    }]
+
+    var currentQuestion = 0;
+    var correctAnswer = 0;
+    var totalQuestion = question.length;
+
+    function checkAns() {
+        let id = this.getAttribute('id');
+        let ans = question[currentQuestion].correct
+
+        if (ans - 1 == id) {
+            correctAnswer += 1
+        }
+        if (currentQuestion + 1 < totalQuestion) {
+            currentQuestion += 1
+            displayQuestion()
+        } else {
+            document.querySelector('.question').innerHTML = 'Total correct answers are:'
+            document.querySelector('.choice').innerHTML = correctAnswer;
+        }
+
+        return false
+    }
+
+    function displayQuestion() {
+        var html = '';
+        document.querySelector('.question').innerHTML = question[currentQuestion].question;
+        for (let i = 0; i < question[currentQuestion].choices.length; i++) {
+            html += `<li class="ans" id="${i}"> ${question[currentQuestion].choices[i]}</li>`;
+        }
+
+        document.querySelector('.choice').innerHTML = html;
+
+        var buttons = document.getElementsByClassName('ans');
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', checkAns);
+        };
+
+    }
+
+    displayQuestion()
+</script>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballon Game</title>
+    <style>
+        body {
+
+            width: 500px;
+            margin: auto;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .ballons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .red_ball {
+            height: 60px;
+            width: 60px;
+            margin: 12px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .ballon {
+            height: 60px;
+            width: 60px;
+            margin: 12px;
+            font-size: 22px;
+        }
+
+        .pop {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pop all the ballons</h1>
+    <div class="container">
+        <div class="ballons"></div>
+    </div>
+</body>
+<script>
+    var no_of_ballons = 30;
+    var popped = []
+    var ballons = document.querySelector('.ballons')
+
+    function pop() {
+        let id = this.getAttribute('id');
+        if (!popped.includes(id)) {
+            popped.push(id)
+        }
+        if (popped.length >= 30) {
+            ballons.innerHTML = 'All ballons are popped'
+        } else {
+            document.getElementById(id).innerHTML = 'popped'
+        }
+
+        return false
+    }
+
+    var html = '';
+    for (let i = 0; i < no_of_ballons; i++) {
+        html += `<div class='ballon' id=${i}><p class ='red_ball'></p></div>`;
+    }
+    ballons.innerHTML = html
+
+    var ballon = document.getElementsByClassName('ballon');
+
+    for (let i = 0; i < ballon.length; i++) {
+        ballon[i].addEventListener('mouseover', pop);
+    };
+
+</script>
+
+</html>
