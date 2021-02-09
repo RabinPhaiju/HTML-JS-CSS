@@ -1,4 +1,4 @@
-# HTML-JS-CSS
+# HTML-[JS](https://rabinphaiju.github.io/HTML-JS-CSS/Javascript/)-CSS
 
 1. [Portfolio](https://rabinphaiju.github.io/HTML-JS-CSS/Porfolio/)
 2. [UI 1](https://rabinphaiju.github.io/HTML-JS-CSS/UI%201/)
