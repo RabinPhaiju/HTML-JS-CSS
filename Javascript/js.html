@@ -11,13 +11,31 @@
     <h2>1. Data Types</h2>
     <script>
         var name = 'rabin';
-        var roll = '29';
+        var roll = 29;
         var x = 3.14;
         var boolean = true;
+        var marks; // undefined
+        var mark = undefined;
+        var obj = null;
         document.write('name : ' + name);
         document.write('<br>roll : ' + roll);
         document.write('<br>pi : ' + x);
         document.write('<br>boolean : ' + boolean);
+        document.write('<br>undifined : ' + mark); // not have value yet
+        document.write('<br>null : ' + obj); // non-existent
+        document.write('<br> -> Js has dynamic typing: data types are automaticaaly assigned to variables.')
+        /////////////////////////////////
+        var job, isMarried;
+        job = 'teacher';
+        isMarried = false;
+        document.write('<br>type coercion --' + name + ' ' + x); //type x float is convert to string even undefined too.
+        document.write('<br>Type coercion -- ' + name + ' is a ' + roll + ' year old and ' + job + " is he married " + isMarried)
+        //////////////////////////////
+        // variable mutation
+        roll = 'twenty nine'
+        document.write('<br> ' + roll)
+        document.write('<br> typeof ' + typeof (roll))
+        document.write("<br> <h3><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table'> Operator precedence </a></h1>")
     </script>
     <h2>2. Function</h2>
     <input type="number" onkeyup="calc()" id="num1">
@@ -33,17 +51,41 @@
         var sum = (x, y) => {
             return parseInt(x) + parseInt(y);
         }
+        document.write('<br> sum is: ' + sum(2, 3))
     </script>
 
-    <h2>3. Objects</h2>
+    <h2>3. Objects and object methods</h2>
+    <h4>In javascript everything is object.</h4>
     <script>
         var person = {
             name: 'rabin',
-            age: 26,
-            job: 'developer',
+            birthYear: 1994,
+            calcAge: function () {
+                this.age = 2021 - this.birthYear;
+
+                function innerfunction() {
+                    document.write(this)
+                }
+                innerfunction()
+            },
+            job: ['developer', 'programmer'],
             car: 'bmw'
+        };
+        person.job.push('gamer')
+        person.calcAge();
+        document.write('<br> ' + person.job + ' he is ' + person.age + ' years..');
+
+        //
+        document.write('<br> Object Methods')
+        var rabin = new Object();
+        rabin.firstname = 'rabin';
+        rabin.lastname = 'phaiju';
+        rabin.birthYear = 1994;
+        rabin.calcAge = (birthYear) => {
+            return 2020 - birthYear;
         }
-        document.write(person.name);
+        document.write('<br> ' + rabin.lastname + ' and his is ' + rabin.calcAge(rabin.birthYear) + ' years.')
+
     </script>
     <h2>4. Local & global variable</h2>
     <script>
@@ -84,15 +126,19 @@
     <h2>7. Array</h2>
     <script>
         var names = ['rabin', 'john', 'julia'];
+        // index of
+        document.write('<br> index of rabin is ' + names.indexOf('rabin'))
+        // if not in the list. It returns -1
+        var newYears = new Array(1990, 1991, 1992);
         document.write('<br> first name in array : ' + names[0]);
         names.push('tom');
         document.write('<br> last name : ' + names[names.length - 1]);
         names.pop();
         document.write('<br> last name : ' + names[names.length - 1]);
         document.write('<br> array : ' + names.toString());
-        document.write('<br> array shift : ' + names.shift());
+        document.write('<br> array shift : ' + names.shift()); // remove from first in list
         document.write('<br> first array : ' + names[0]);
-        document.write('<br> unshift : ' + names.unshift('rabs'));
+        document.write('<br> unshift : ' + names.unshift('rabs'));// add element at first
         document.write('<br> first array : ' + names[0]);
     </script>
     <h2>8. If Statement</h2>
@@ -101,15 +147,51 @@
         var day = today.getDay();
         if (day == 0) {
             document.write('<br> today is : Sunday');
+        } else {
+            document.write('<br> Today is not sunday')
+        }
+        var a = 'hello';
+        if (a === 'bye') {
+            console.log('bye')
+        }
+        var con = true;
+        if (con) {
+            document.write(' It is true')
+        }
+        var tf = con ? 'true' : 'false';
+        document.write('<br> Ternary operator --' + tf)
+    </script>
+    <h2>9. Falsy value and equality operator: undefined,null,0,'',NaN</h2>
+    <script>
+        var height1;
+        if (!height1) {
+            document.write('<br>variable is not defined')
+        }
+        height1 = 0;
+        if (!height1) {
+            document.write('<br>variable is not defined')
+        }
+        height1 = '';
+        if (!height1) {
+            document.write('<br>variable is not defined')
+        }
+        height1 = 23;
+        // Equality operator
+        if (height1 == '23') {
+            document.write('<br> The == operator does type coercion!')
+        }
+        if (height1 === '23') {
+        } else {
+            document.write('<br> The === operator does type check!')
         }
     </script>
-    <h2>9. For loop</h2>
+    <h2>10. For loop</h2>
     <script>
         for (var counter = 0; counter < 4; counter++) {
             document.write('<br>Counter : ' + counter);
         }
     </script>
-    <h2>9. While loop</h2>
+    <h2>11. While loop</h2>
     <script>
         var counter = 0;
         while (counter < 4) {
@@ -117,7 +199,7 @@
             counter++;
         }
     </script>
-    <h2>10. Switch</h2>
+    <h2>12. Switch</h2>
     <script>
         var grade = 'A';
         switch (grade) {
@@ -132,19 +214,19 @@
 
         }
     </script>
-    <h2>11. Hoisting</h2>
+    <h2>13. Hoisting</h2>
     <script>
         x = 10;
         document.write('<br> declare variable later. :' + x);
         var x;
     </script>
-    <h2>12. DOM</h2>
+    <h2>14. DOM</h2>
     <p id="pr"></p>
     <script>
         document.getElementById('pr').innerHTML = 'This is a DOM';
         document.getElementById('pr').style.background = '#789';
     </script>
-    <h3>12. DOM Events</h3>
+    <h3>15. DOM Events</h3>
     <h2 onclick="this.innerHTML='You clicked'">Click here</h2>
     <h2 onclick="this.style.color='#678'">Click here</h2>
 
@@ -156,12 +238,13 @@
         }
         document.getElementById('click').addEventListener('click', changeColor);
     </script>
-    <h2>14 Brower Object Model</h2>
+    <h2>16 Brower Object Model</h2>
     <script>
         document.write('screen width : ' + screen.width);
         document.write('<br>screen heigh : ' + screen.height);
         document.write('<br>url : ' + window.location.href);
     </script>
 </body>
+<script src="object and methods.js"></script>
 
 </html>

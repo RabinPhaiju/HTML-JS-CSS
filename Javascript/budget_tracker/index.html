@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Budget App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <h4 class="budget-month"></h4>
+            <span class="balance">+0</span>
+            <div class="income">
+                <span>INCOME</span>
+                <span class="price income-price">+0.00</span>
+            </div>
+            <div class="expenses">
+                <span>EXPENSES</span>
+                <span class="price expense-price">-0.00</span>
+                <span class="price expense-percentage">0%</span>
+            </div>
+        </div>
+        <div class="middle">
+            <select name="sign" id="sign" class="sign">
+                <option value="inc" selected>+</option>
+                <option value="exp">-</option>
+            </select>
+            <input type="text" name="desc" id="desc" class="desc" value="" placeholder="Add description">
+            <input type="number" name="amount" id="ammount" class="ammount" value="" placeholder="value">
+            <button class="add">Add</button>
+        </div>
+        <div class="buttom">
+            <div class="income">
+                <span class="income">INCOME</span>
+                <div class="income-list">
+
+                </div>
+            </div>
+            <div class="expenses">
+                <span class="expenses">EXPENSES</span>
+                <div class="expense-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>

@@ -1,0 +1,108 @@
+*{
+    box-sizing: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.container .top{
+    background-image: url("cold-background.jpg");
+    background-size: cover;
+    text-align: center;
+    height: 30vh;
+    padding: 10px;
+}
+
+.top .balance{
+    color: white;
+    font-size: 30px;
+}
+.top .income,.top .expenses{
+    background-color: #25B0AB;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 38%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.top .income .price,.top .expenses .price{
+    color: white;
+}
+
+.top .expenses{
+    background-color: #FF4640;
+}
+
+/* middle */
+.middle{
+    background-color: rgb(212, 209, 209);
+    padding: 10px;
+    text-align: center;
+}
+.middle .sign,.middle #desc,.middle #ammount,.middle .add{
+    padding: 6px;
+    border-color: azure;
+    border-radius: 4px;
+}
+.middle #desc{
+    width: 240px;
+}
+.middle #ammount{
+    width: 60px;
+}
+.middle .desc,.middle .ammount,.middle .sign{
+    outline-color: #25B0AB;
+}
+.red-focus{
+    outline-color: #FF4640 !important
+}
+ /* buttom */
+ .buttom{
+     display: flex;
+     justify-content: space-around;
+     margin: 30px 10px;
+ }
+ .buttom .income .income{
+     color: #25B0AB;
+ }
+ 
+ .buttom .income .list{
+    background-color: #25B0AB;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+    padding: 10px 10px;
+    margin: 4px;
+    border-radius: 4px;
+ }
+ .buttom .income .list .income{
+    color: white;
+ }
+ .buttom .income .list .income .hidden,.buttom .expenses .list .expenses .dels .hidden{
+    display: none;
+ }
+ .buttom .expenses .list{
+     background-color: #FF4640;
+     display: flex;
+     padding: 10px 10px;
+     justify-content: space-between;
+     margin: 4px;
+     width: 260px;
+     color: white;
+     border-radius: 4px;
+    }
+    .buttom .expenses .list .expenses{
+     color: white;
+     display: flex;
+ }
+ .buttom .expenses .expenses{
+    color: #FF4640;
+}
+
+.buttom .income .list:hover .income .hidden,.buttom .expenses .list:hover .expenses .hidden{
+    display: inline;
+} 
+.buttom .income .list:hover,.buttom .expenses .list:hover{
+    cursor: pointer;
+}
