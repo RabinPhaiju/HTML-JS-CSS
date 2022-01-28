@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Types</title>
+</head>
+
+<body>
+    <h1>Data Types</h1><span>Js has dynamic typing: data types are automaticaaly assigned to variables.</span>
+    <h2>Primitive Datatypes: stack, base data types</h2>
+    <li>string, numbers, booleab, null, undefined,symbol</li>
+    <h2>Refference Datatypes: heap, object or derived datatypes</h2>
+    <li>arrays, object, functions, dates</li>
+    <h1>Type conversion and coercion</h1>
+    <p>Convert to string => String(23) ==> "23"</p>
+    <p>number.toString()</p>
+    <p>String(new Date())</p>
+    <p>String([1,2,3,4,5])</p>
+    <p>-----------------</p>
+    <p>let age = '23'; Number(age) | true = 1, false=0 | string=nan </p>
+    <p>let number = parseInt('34') | parseFloat('34.3434')</p>
+    <p>number.toFixed(4) => 2.0000</p>
+</body>
+<script>
+    var job, isMarried;
+    job = 'teacher';
+    isMarried = false;
+    console.log(typeof (job))
+
+    //////////////  Array //////////////////////
+    const array1 = [1, 2, 3, 4, 5, 'rabin']; // array datatype is object
+    console.log(typeof array1); // object
+    /////////////////////////// Object //////////////////////////////
+    let marks = {
+        'rabin': 100,
+        raj: 90,
+        rajesh: 80
+    };
+    console.log(typeof (marks)); // object
+
+    /////////////////////////// Function //////////////////////////////
+    function add(x, y) {
+        return x + y;
+    }
+    console.log(typeof (add)); // function
+
+    /////////////////////////// Date //////////////////////////////
+    let date = new Date();
+    console.log(typeof (date)); // object
+
+    //string//
+    var str = 10;
+    console.log(typeof (str)); // number
+    console.log(str == '10') // true
+    str = '10';
+    console.log(str === '10')// true
+
+</script>
+
+</html>

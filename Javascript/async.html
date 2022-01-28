@@ -30,13 +30,19 @@
             resolve([1, 2, 3, 4, 5]);
         }, 1500)
     })
-    async function getRecipeAW() {
+    getRecipeAW = async () => {
         const IDs = await getIDs;
         console.log(IDs)
         const ids = await getIDs;
         console.log(ids)
     }
     getRecipeAW()
+
+    // getIDs.then(IDs => {
+    //     console.log(IDs)
+    // }).catch(error => {
+    //     console.log('Error', error)
+    // })
 </script>
 
 </html>

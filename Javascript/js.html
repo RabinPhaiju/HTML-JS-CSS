@@ -8,35 +8,18 @@
 </head>
 
 <body>
-    <h2>1. Data Types</h2>
-    <script>
-        var name = 'rabin';
-        var roll = 29;
-        var x = 3.14;
-        var boolean = true;
-        var marks; // undefined
-        var mark = undefined;
-        var obj = null;
-        document.write('name : ' + name);
-        document.write('<br>roll : ' + roll);
-        document.write('<br>pi : ' + x);
-        document.write('<br>boolean : ' + boolean);
-        document.write('<br>undifined : ' + mark); // not have value yet
-        document.write('<br>null : ' + obj); // non-existent
-        document.write('<br> -> Js has dynamic typing: data types are automaticaaly assigned to variables.')
-        /////////////////////////////////
-        var job, isMarried;
-        job = 'teacher';
-        isMarried = false;
-        document.write('<br>type coercion --' + name + ' ' + x); //type x float is convert to string even undefined too.
-        document.write('<br>Type coercion -- ' + name + ' is a ' + roll + ' year old and ' + job + " is he married " + isMarried)
-        //////////////////////////////
-        // variable mutation
-        roll = 'twenty nine'
-        document.write('<br> ' + roll)
-        document.write('<br> typeof ' + typeof (roll))
-        document.write("<br> <h3><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table'> Operator precedence </a></h1>")
-    </script>
+    <ul>
+        <li>Change the page data at runtime</li>
+        <li>To validate user is doing on the page -> forms</li>
+        <li>Show or hide elements on page on user action</li>
+        <li>Download or upload data on background</li>
+        <li>Animation effect</li>
+        <li>Control Timer</li>
+        <li>Control Ajax</li>
+        <li>Control DOM</li>
+        <li>Control Events</li>
+
+    </ul>
     <h2>2. Function</h2>
     <input type="number" onkeyup="calc()" id="num1">
     <input type="number" onkeyup="calc()" id="num2">
@@ -187,7 +170,7 @@
     </script>
     <h2>10. For loop</h2>
     <script>
-        for (var counter = 0; counter < 4; counter++) {
+        for (var counter = 0;counter < 4;counter++) {
             document.write('<br>Counter : ' + counter);
         }
     </script>

@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-container{
+    height: 400px;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    /* Always on the main axis*/
+    justify-content: center;
+    /* Always on the cross axis*/
+    align-items: center;
+    /* wraps on the cross axis*/
+    flex-wrap: wrap;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    /* order: 1; */
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    /* flex-basis: 200; */
+    width: 100px;
+    height: 100px;
+    background: #276766;
+    color: white;
+    margin: 10px;
+}

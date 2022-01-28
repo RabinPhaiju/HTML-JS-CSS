@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array & Objects</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const marks = [80, 90, 70, 60, 50];
+    const names = ['rabin', 'shyam', 'sita', 'sita', 'sita'];
+    const mixed = ['str', 10, true, [10, 20, 30]];
+
+    let arr = new Array(10, 20, 30, 40, 50);
+    console.log(arr.indexOf(20));
+
+    /// Mutating
+    arr.push(89); // last of array
+    arr.unshift(100); // front of array
+    arr.pop(); // remove last element
+    arr.shift(); // remove first element
+    arr.splice(2, 1); // remove element from index 2
+    arr.splice(2, 0, 'rabin'); // add element at index 2
+    arr.reverse(); // reverse array
+    arr.sort(); // sort array
+    arr.sort((a, b) => a - b); // sort array in ascending order
+    arr.sort((a, b) => b - a); // sort array in descending order
+
+    arr.concat(names); // concat array
+    console.log(arr.concat(names)); // concat array
+
+    // object //
+    let myObj = {
+        'full name': 'rabin',
+        age: 23,
+        channel: 'youtube',
+        address: {
+            city: 'kolkata',
+            state: 'WB',
+            country: 'India'
+        },
+        marks: [80, 90, 70, 60, 50],
+    }
+    console.log(myObj.address.city);
+    console.log(myObj['full name']);
+</script>
+
+</html>
