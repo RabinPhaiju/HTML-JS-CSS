@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Map</title>
+</head>
+
+<body>
+    <ul>
+        <li>Map is similar to object but little bit advance from object</li>
+        <li>Map key can be any data type (object can have string key only</li>
+        <li>Map has more features which dont have in object</li>
+        <li>Map has better performance than Object</li>
+        <li>Type of Map is object.</li>
+    </ul>
+</body>
+<script>
+    let obj = {
+        name: 'John',
+        age: 30,
+        10: "This is number",
+        true: "This is boolean", // true os string
+    }
+    let data = new Map([
+        ['name', 'John'],
+        ['age', 30],
+        [10, 'This is number'],
+        [true, 'This is boolean'],
+    ])
+
+    // console.warn(obj.10)
+    console.warn(obj.true)
+    // console.warn(obj.key)
+    obj.town = "bkt"
+    console.warn(obj)
+
+    console.warn(data.get(10))
+    console.warn(data.get(true))
+    console.warn(data.size)
+    console.warn(data.has('name'))
+    console.warn(data.keys())
+    console.warn(data.values())
+    data.set("city", "bkt")
+    data.set({}, "bkt")
+    data.set(() => { }, "bkt")
+    console.warn(data)
+
+    data.forEach((value, key) => {
+        console.warn(key, value)
+    })
+
+    for (let [key, value] of data) {
+        console.warn(key, value)
+    }
+    console.warn(typeof data)
+</script>
+
+</html>
