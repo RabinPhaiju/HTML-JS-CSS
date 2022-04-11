@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Value vs. Reference Variable Assignment</h4>
+    <h6>primitive type (i.e., Boolean, Null, Undefined, String, Number, Symbol, and BigInt.) </h6>
+    <ul>
+        <li>the JavaScript runtime gets to determine whether that primitive is assigned by reference or by value. </li>
+        <li>It doesn't really matter how it's done because primitives can't be mutated</li>
+        <li>However, when the assigned value is an Array, Function, or Object a reference to the array/function/object
+            in memory is assigned.</li>
+    </ul>
+    <div>In the following example 1, var2 is set as equal to var1. Since var1 is a primitive type (String), var2 is set
+        as
+        equal to var1's String value and can be thought of as completely distinct from var1 at this point. Accordingly,
+        reassigning var2 has no effect on var1.</div>
+    <pre>
+        const var1 = 'My string'
+        let var2 = var1
+
+        var2 = 'My new string'
+
+        console.log(var1)
+        // 'My string'
+        console.log(var2);
+        // 'My new string'
+    </pre>
+
+    <div>The object { name: 'Jim' } is created in memory
+        The variable var1 is assigned a reference to the created object
+        The variable var2 is set to equal var1... which is a reference to that same object in memory!
+        var2 is mutated, which really means the object var2 is referencing is mutated
+        var1 is pointing to the same object as var2, and therefore we see this mutation when accessing var1</div>
+    <pre>
+        const var1 = { name: 'Jim' }
+        const var2 = var1
+
+        var2.name = 'John'
+
+        console.log(var1)
+        // { name: 'John' }
+        console.log(var2);
+        // { name: 'John' }
+    </pre>
+</body>
+
+</html>

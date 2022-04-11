@@ -15,8 +15,17 @@
     <h1>Callback Function</h1>
     <p>Any function that is passed as an argument is called a callback function.</p>
     <p>A callback is a function that is to be executed after another function has finish executing.</p>
+    <i>Far too many people are intimidated by javascript callback functions! They are simple, take this example. The
+        console.log function is being passed as a callback to myFunc. It gets executed when setTimeout completes. That's
+        all there is to it!</i>
+    <pre>function myFunc(text, callback) {
+    setTimeout(function() {
+        callback(text);
+    }, 2000);
+}
 
-
+myFunc('Hello world!', console.log);
+// 'Hello world!'</pre>
     <h2>Functions are object in JavaScript</h2>
     <p>We can pass objects to function as parameters. We can pass and call functions inside other functions.</p>
     <p>We can also return functions from other functions.</p>
@@ -38,31 +47,31 @@
 </body>
 <script>
     function print(callback) {
-        console.log("Call back function");
+        console.log("Call back function")
         // print function takes a callback function as parameter and calls it inside this function.
-        callback();
+        callback()
     }
 
     const message = function () {
-        console.log("Hello World");
+        console.log("Hello World")
     }
 
-    setTimeout(print(message), 2000);
-    setTimeout(message, 2000);
+    setTimeout(print(message), 2000)
+    setTimeout(message, 2000)
 
     const perOne = (friend, callback) => {
-        console.log(`Hey what's up, I am talking to  ${friend}. I will callback later.`);
-        callback();
+        console.log(`Hey what's up, I am talking to  ${friend}. I will callback later.`)
+        callback()
     }
     const perTwo = () => {
-        console.log('Hey I will called you. Why did you call me?');
+        console.log('Hey I will called you. Why did you call me?')
     }
 
-    perOne('John', perTwo);
+    perOne('John', perTwo)
 
     window.onload = function () {
         document.getElementById("callback").addEventListener('click', function () {
-            console.log("Callback function");
+            console.log("Callback function")
         })
     }
 </script>

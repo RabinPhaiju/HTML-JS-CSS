@@ -9,30 +9,48 @@
 </head>
 
 <body>
-
+    <h2>map, filter, reduce
+    </h2>
+    <p> There is some confusion around the javascript array methods map, filter, reduce. These are helpful methods for
+        transforming an array or returning an aggregate value.</p>
+    <p> map: return array where each element is transformed as specified by the function</p>
+    <pre>const arr = [1, 2, 3, 4, 5, 6];
+            const mapped = arr.map(el => el + 20);
+            console.log(mapped);
+            // [21, 22, 23, 24, 25, 26]</pre>
+    <p>filter: return array of elements where the function returns true</p>
+    <pre>const arr = [1, 2, 3, 4, 5, 6];
+        const filtered = arr.filter(el => el === 2 || el === 4);
+        console.log(filtered);
+        // [2, 4]</pre>
+    <p>reduce: accumulate values as specified in function</p>
+    <pre>const arr = [1, 2, 3, 4, 5, 6];
+        const reduced = arr.reduce((total, current) => total + current, 0);
+        console.log(reduced);
+        // 21</pre>
 </body>
 <script>
-    const marks = [80, 90, 70, 60, 50];
-    const names = ['rabin', 'shyam', 'sita', 'sita', 'sita'];
-    const mixed = ['str', 10, true, [10, 20, 30]];
+    const marks = [80, 90, 70, 60, 50]
+    const names = ['rabin', 'shyam', 'sita', 'sita', 'sita']
+    const mixed = ['str', 10, true, [10, 20, 30]]
 
-    let arr = new Array(10, 20, 30, 40, 50);
-    console.log(arr.indexOf(20));
+    let arr = new Array(10, 20, 30, 40, 50)
+    console.log(arr.indexOf(20))
 
     /// Mutating
-    arr.push(89); // last of array
-    arr.unshift(100); // front of array
-    arr.pop(); // remove last element
-    arr.shift(); // remove first element
-    arr.splice(2, 1); // remove element from index 2
-    arr.splice(2, 0, 'rabin'); // add element at index 2
-    arr.reverse(); // reverse array
-    arr.sort(); // sort array
-    arr.sort((a, b) => a - b); // sort array in ascending order
-    arr.sort((a, b) => b - a); // sort array in descending order
+    arr.push(89) // last of array
+    arr.unshift(100) // front of array
+    arr.pop() // remove last element
+    arr.shift() // remove first element
+    arr.splice(2, 1) // remove element from index 2
+    arr.splice(2, 0, 'rabin') // add element at index 2
+    arr.reverse() // reverse array
+    arr.sort() // sort array
+    arr.sort((a, b) => a - b) // sort array in ascending order
+    arr.sort((a, b) => b - a) // sort array in descending order
 
-    arr.concat(names); // concat array
-    console.log(arr.concat(names)); // concat array
+    arr.concat(names) // concat array
+    console.log(arr.concat(names)) // concat array
 
     // object //
     let myObj = {
@@ -46,7 +64,7 @@
         },
         marks: [80, 90, 70, 60, 50],
     }
-    console.log(myObj.address.city);
+    console.log(myObj.address.city)
     console.log(myObj['full name']);
 </script>
 

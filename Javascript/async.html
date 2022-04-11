@@ -10,6 +10,35 @@
 
 <body>
     <h2>Asynchronous JavaScript</h2>
+    <p>Once you get the hang of javascript promises, you might like async await, which is just "syntactic sugar" on top
+        of promises. In the following example we create an async function and within that we await the greeter promise.
+    </p>
+    <pre>const greeter = new Promise((res, rej) => {
+        setTimeout(() => res('Hello world!'), 2000);
+    });
+    
+    async function myFunc() {
+        const greeting = await greeter;
+        console.log(greeting);
+    }
+    
+    myFunc();
+    // 'Hello world!'</pre>
+    <p>Async functions return a promise
+        One important thing to note here is that the result of an async function is a promise.</p>
+    <pre>
+            const greeter = new Promise((res, rej) => {
+                setTimeout(() => res('Hello world!'), 2000);
+            });
+            
+            async function myFunc() {
+                return await greeter;
+            }
+            
+            console.log(myFunc()); // => Promise {}
+            
+            myFunc().then(console.log); // => Hello world!
+        </pre>
 </body>
 <script>
     const second = () => {
@@ -27,13 +56,13 @@
 
     const getIDs = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve([1, 2, 3, 4, 5]);
+            resolve([1, 2, 3, 4, 5])
         }, 1500)
     })
     getRecipeAW = async () => {
-        const IDs = await getIDs;
+        const IDs = await getIDs
         console.log(IDs)
-        const ids = await getIDs;
+        const ids = await getIDs
         console.log(ids)
     }
     getRecipeAW()
