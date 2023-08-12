@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Operator (===) vs. Equality Operator (==)</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+<h2>Identity Operator (===) vs. Equality Operator (==)</h2>
+<p>Be sure to know the difference between the identify operator (===) and equality operator (==) in javascript! The
+    == operator will do type conversion prior to comparing values whereas the === operator will not do any type
+    conversion before comparing.</p>
+                <code id="code" class="language-css">
+                    <pre>console.log(0 == '0');
+                        // true
+                        console.log(0 === '0');
+                        // false</pre>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+   
+</body>
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
+
+</html>

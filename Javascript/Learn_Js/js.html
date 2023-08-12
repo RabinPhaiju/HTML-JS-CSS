@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <code id="code" class="language-css">
+                <ul>
+                    <li>Change the page data at runtime</li>
+                    <li>To validate user is doing on the page -> forms</li>
+                    <li>Show or hide elements on page on user action</li>
+                    <li>Download or upload data on background</li>
+                    <li>Animation effect</li>
+                    <li>Control Timer</li>
+                    <li>Control Ajax</li>
+                    <li>Control DOM</li>
+                    <li>Control Events</li>
+            
+                </ul>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+  <div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>2. Function</h2>
+            <input type="number" onkeyup="calc()" id="num1">
+            <input type="number" onkeyup="calc()" id="num2">
+            <p id='demo'>Sum is : </p>
+            <code id="code" class="language-css">
+<script>
+    var calc = () => {
+        var x = document.getElementById('num1').value;
+        var y = document.getElementById('num2').value;
+        var result = sum(x, y);
+        document.getElementById("demo").innerHTML = 'The sum is : ' + result;
+    }
+    var sum = (x, y) => {
+        return parseInt(x) + parseInt(y);
+    }
+    document.write('\n sum is: ' + sum(2, 3))
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>3. Objects and object methods</h2>
+            <h4>In javascript everything is object.</h4>
+            <code id="code" class="language-css">
+<script>
+    var person = {
+        name: 'rabin',
+        birthYear: 1994,
+        calcAge: function () {
+            this.age = 2021 - this.birthYear;
+
+            function innerfunction() {
+                document.write(this)
+            }
+            innerfunction()
+        },
+        job: ['developer', 'programmer'],
+        car: 'bmw'
+    };
+    person.job.push('gamer')
+    person.calcAge();
+    document.write('\n ' + person.job + ' he is ' + person.age + ' years..');
+
+    //
+    document.write('\n Object Methods')
+    var rabin = new Object();
+    rabin.firstname = 'rabin';
+    rabin.lastname = 'phaiju';
+    rabin.birthYear = 1994;
+    rabin.calcAge = (birthYear) => {
+        return 2020 - birthYear;
+    }
+    document.write('\n' + rabin.lastname + ' and his is ' + rabin.calcAge(rabin.birthYear) + ' years.')
+
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>4. Local & global variable</h2>
+            <code id="code" class="language-css">
+<script>
+    var local_num = 10;
+    var scope = () => {
+        var num = 100;
+        document.write(num);
+    }
+    scope();
+    document.write('\n' + local_num);
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>5. String Methods</h2>
+            <code id="code" class="language-css">
+<script>
+    name = 'rabin phaiju is a full stack developer';
+    document.write(name);
+    document.write('\nname length : ' + name.length);
+    document.write('\nIndex of "full":' + name.indexOf('full'));
+    document.write('\nsearch "full":' + name.search('full'));
+    document.write('\nslice : ' + name.slice(1, 6));
+    document.write('\nsubstr : ' + name.substr(1, 6));
+    document.write('\nreplace : ' + name.replace('full', 'fully'));
+    document.write('\ntoUpperCase : ' + name.toUpperCase());
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>6. Math Methods</h2>
+            <code id="code" class="language-css">
+<script>
+    var x = 22 / 7;
+    document.write('\npi : ' + x);
+    x = x.toFixed(3);
+    document.write('\ntoFixed : ' + x);
+    document.write('\nMath.round 3.3 : ' + Math.round(3.3));
+    document.write('\nMath.pow 3^3 : ' + Math.pow(3, 3));
+    document.write('\nMath.pow 9^0.5 : ' + Math.pow(9, 0.5));
+    document.write('\nMath.sqrt 9^2 : ' + Math.sqrt(9, 2));
+    document.write('\nMath.abs -55 : ' + Math.abs(-55));
+    document.write('\nMath.ceil 5.6 : ' + Math.ceil(5.6));
+    document.write('\nMath.floor 5.6 : ' + Math.floor(5.6));
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>7. Array</h2>
+            <code id="code" class="language-css">
+<script>
+    var names = ['rabin', 'john', 'julia'];
+    // index of
+    document.write('\n index of rabin is ' + names.indexOf('rabin'))
+    // if not in the list. It returns -1
+    var newYears = new Array(1990, 1991, 1992);
+    document.write('\n first name in array : ' + names[0]);
+    names.push('tom');
+    document.write('\n last name : ' + names[names.length - 1]);
+    names.pop();
+    document.write('\n last name : ' + names[names.length - 1]);
+    document.write('\n array : ' + names.toString());
+    document.write('\n array shift : ' + names.shift()); // remove from first in list
+    document.write('\n first array : ' + names[0]);
+    document.write('\n unshift : ' + names.unshift('rabs'));// add element at first
+    document.write('\n first array : ' + names[0]);
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>8. If Statement</h2>
+            <code id="code" class="language-css">
+<script>
+    var today = new Date();
+    var day = today.getDay();
+    if (day == 0) {
+        document.write('\n today is : Sunday');
+    } else {
+        document.write('\n Today is not sunday')
+    }
+    var a = 'hello';
+    if (a === 'bye') {
+        document.write('\n' + 'bye')
+    }
+    var con = true;
+    if (con) {
+        document.write(' It is true')
+    }
+    var tf = con ? 'true' : 'false';
+    document.write('\n Ternary operator --' + tf)
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>9. Falsy value and equality operator: undefined,null,0,'',NaN</h2>
+            <code id="code" class="language-css">
+<script>
+    var height1;
+    if (!height1) {
+        document.write('\nvariable is not defined')
+    }
+    height1 = 0;
+    if (!height1) {
+        document.write('\nvariable is not defined')
+    }
+    height1 = '';
+    if (!height1) {
+        document.write('\nvariable is not defined')
+    }
+    height1 = 23;
+    // Equality operator
+    if (height1 == '23') {
+        document.write('\n The == operator does type coercion!')
+    }
+    if (height1 === '23') {
+    } else {
+        document.write('\n The === operator does type check!')
+    }
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>10. For loop</h2>
+            <code id="code" class="language-css">     
+<script>
+    for (var counter = 0;counter < 4;counter++) {
+        document.write('\nCounter : ' + counter);
+    }
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>11. While loop</h2>
+            <code id="code" class="language-css">
+<script>
+    var counter = 0;
+    while (counter < 4) {
+        document.write('\nCounter : ' + counter);
+        counter++;
+    }
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>12. Switch</h2>
+            <code id="code" class="language-css">
+<script>
+    var grade = 'A';
+    switch (grade) {
+        case 'A':
+            document.write('\nGrade is : A');
+            break;
+        case 'B':
+            document.write('\nGrade is : B');
+            break;
+        default:
+            document.write('\nGrade is : Fail');
+    }
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h2>13. Hoisting</h2>
+            <code id="code" class="language-css">
+<script>
+    x = 10;
+    document.write('\n declare variable later. :' + x);
+    var x;
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>14. DOM</h2>
+            <code id="code" class="language-css">
+<p id="pr"></p>
+<script>
+    document.getElementById('pr').innerHTML = 'This is a DOM';
+    document.getElementById('pr').style.background = '#789';
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+    <h3>15. DOM Events</h3>
+                <h2 onclick="this.innerHTML='You clicked'">Click here</h2>
+                <h2 onclick="this.style.color='#678'">Click here</h2>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>DOM Event Listener</h2>
+            <p id="click">Click</p>
+            <code id="code" class="language-css">
+            <script>
+                var changeColor = () => {
+                    document.getElementById('click').innerHTML = 'Clicked';
+                }
+                document.getElementById('click').addEventListener('click', changeColor);
+            </script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>16 Brower Object Model</h2>
+            <code id="code" class="language-css">
+            <script>
+document.write('\nscreen width : ' + screen.width);
+document.write('\nscreen heigh : ' + screen.height);
+document.write('\nurl : ' + window.location.href);
+            </script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>17. Js object</h2>
+            <code id="code" class="language-css">
+                var rabs = {
+                    name: "rabin",
+                    yearOfBirth: 1994,
+                    job: "student",
+                  };
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>17. constructor function</h2>
+            <code id="code" class="language-css">
+<script>
+var Person = function (name, yearOfBirth) {
+this.name = name;
+this.yearOfBirth = yearOfBirth;
+};
+
+Person.prototype.calculateAge = function () {
+    document.write('\n',(2020 - this.yearOfBirth));
+};
+
+Person.prototype.job = "Student";
+var rabin = new Person("Rabin", 1994);
+
+rabin.calculateAge();
+document.write('\n' + rabin.job);
+
+var sabin = new Person("Sabin", 1992);
+sabin.calculateAge();
+document.write('\n' + sabin.job);
+
+var sapana = new Person("Sapana", 1996);
+sapana.calculateAge();
+document.write('\n' + sapana.job);
+</script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>18. Object Create</h2>
+            <code id="code" class="language-css">
+<script>
+var personProto = {
+  calculateAge: function () {
+    document.write('\n'+ (2020 - this.yearOfBirth));
+  },
+};
+
+var john = Object.create(personProto);
+john.name = "john";
+john.yearOfBirth = 1969;
+john.job = "teacher";
+
+document.write('\n'+john.name);
+
+var jane = Object.create(personProto, {
+  name: { value: "john" },
+  lastname: { value: "dkf" },
+  yearOfBirth: { value: 1969 },
+  job: { value: "teacher" },
+});
+
+document.write('\n'+jane.job);
+
+              </script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+      </div>
+</div>
+  <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h2>19. Primitives vs objects</h2>
+                <code id="code" class="language-css">
+                  <script>
+var a = 23;
+var b = a;
+a = 46;
+
+document.write('\n'+a, b);
+// not a copy
+
+var obj1 = {
+  name: "rabin",
+  age: 29,
+};
+
+var obj2 = obj1;
+obj1.age = 20;
+
+document.write('\n'+obj1.age, obj2.age);
+// both objects are same as taking reference
+                  </script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>20. using function</h2>
+            <code id="code" class="language-css">
+                <script>
+var age = 28;
+var obj = {
+  name: "rabin",
+  city: "bhaktapur",
+};
+
+function change(a, b) {
+  a = 30;
+  b.city = "kathmandu";
+}
+
+change(age, obj);
+
+document.write('\n'+ age);
+document.write('\n'+ obj.city);
+// object takes reference
+                </script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+        </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>21. First class function -> passing function to function.</h2>
+            <code id="code" class="language-css">
+                <script>
+var years = [1990, 1965, 1937, 2000, 2002];
+
+function arrayCalc(arr, fn) {
+  var arrRes = [];
+
+  for (i = 0; i < arr.length; i++) {
+    arrRes.push(fn(arr[i]));
+  }
+  return arrRes;
+}
+
+function calcAge(year) {
+  return 2020 - year;
+}
+
+document.write('\n'+arrayCalc(years, calcAge));
+                </script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+        </div>
+</div>
+<div class="container">
+    <div class="code-wrapper">
+        <pre>
+            <h2>22. Returning function from function</h2>
+            <code id="code" class="language-css">
+                <script>
+function calc(action) {
+  if (action == "add") {
+    return function (x, y) {
+      document.write('\n'+ action, x, y, "->", x + y);
+    };
+  }
+}
+
+num = calc("add");
+num(2, 3);
+
+calc("add")(3, 9); // closure
+
+// Immediate invoked function expression
+(function () {
+  document.write('\n'+"iife");
+})();
+
+// Call and bind
+                </script>
+            </code>
+        </pre>
+        <button id="copy-button">Copy</button>
+        </div>
+</div>
+</body>
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
+
+</html>

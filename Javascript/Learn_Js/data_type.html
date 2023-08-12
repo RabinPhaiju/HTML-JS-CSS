@@ -6,10 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Types</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
 </head>
 
 <body>
-    <h1>Data Types</h1><span>Js has dynamic typing: data types are automaticaaly assigned to variables.</span>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h1>Data Types</h1>
+                <code id="code" class="language-css">
+                    <span>Js has dynamic typing: data types are automaticaaly assigned to variables.</span>
     <h2>Primitive Datatypes: stack, base data types</h2>
     <li>string, numbers, booleab, null, undefined,symbol</li>
     <h2>Refference Datatypes: heap, object or derived datatypes</h2>
@@ -23,6 +30,53 @@
     <p>let age = '23'; Number(age) | true = 1, false=0 | string=nan </p>
     <p>let number = parseInt('34') | parseFloat('34.3434')</p>
     <p>number.toFixed(4) => 2.0000</p>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h1>Console</h1>
+                <code id="code" class="language-css">
+                    var job, isMarried;
+    job = 'teacher';
+    isMarried = false;
+    console.log(typeof (job))
+
+    //////////////  Array //////////////////////
+    const array1 = [1, 2, 3, 4, 5, 'rabin']; // array datatype is object
+    console.log(typeof array1); // object
+    /////////////////////////// Object //////////////////////////////
+    let marks = {
+        'rabin': 100,
+        raj: 90,
+        rajesh: 80
+    };
+    console.log(typeof (marks)); // object
+
+    /////////////////////////// Function //////////////////////////////
+    function add(x, y) {
+        return x + y;
+    }
+    console.log(typeof (add)); // function
+
+    /////////////////////////// Date //////////////////////////////
+    let date = new Date();
+    console.log(typeof (date)); // object
+
+    //string//
+    var str = 10;
+    console.log(typeof (str)); // number
+    console.log(str == '10') // true
+    str = '10';
+    console.log(str === '10')// true
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
 </body>
 <script>
     var job, isMarried;
@@ -59,5 +113,7 @@
     console.log(str === '10')// true
 
 </script>
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
 
 </html>

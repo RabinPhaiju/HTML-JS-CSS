@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+            <h2>ES6</h2>
+                <code id="code" class="language-css">
+                    <ol>
+                        <li>Variable Declarations with let and const</li>
+                        <li>Blocks and IIFEs</li>
+                        <li>Strings</li>
+                        <li>Arrow Functions</li>
+                        <li>Destructuring</li>
+                        <li>Arrays</li>
+                        <li>Spread Operator</li>
+                        <li>Rest and Defualt Parameters</li>
+                        <li>Maps</li>
+                        <li>Classes and subclasses</li>
+                    </ol>
+                    <script>
+                    </script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>1. let</h3>
+                <code id="code" class="language-css">
+<script>
+    if (true) {
+        let x = 10;
+        document.write('\nlet x = 10 ');
+        document.write('\ninside the block of if: ' + x);
+    }
+    document.write('\noutside the block of if /cant access/: ' + 'error');
+
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>2 .Const</h3>
+                <code id="code" class="language-css">
+<script>
+    const marks1 = [10, 20, 30];
+    marks1.push(40);
+    document.write('\n makrs ' + marks1.toString());
+    document.write('\n array are refference type');
+
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>3. Default parameter</h3>
+                <code id="code" class="language-css">
+<script>
+    var displayMessage = (message = 'this is a message') => {
+        document.write('\n' + message );
+    }
+    displayMessage('hello');
+    displayMessage();
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>4. spread operator</h3>
+                <code id="code" class="language-css">
+                    <script>
+                        var names = ['jim', 'john', 'rob'];
+                        document.write(...names, ' rabin ');
+                    </script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h4>5. Template String</h4>
+                <code id="code" class="language-css">
+                    <script>
+                        var message = `hello rbain`;
+                        document.write(`message : ${message}`);
+                    </script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>6. String methods</h3>
+                <code id="code" class="language-css">
+<script>
+    var message = 'rabinphaiju15@gmail.com';
+    document.write('\n' + message.repeat(3));
+    document.write('\n' + message.startsWith('m'));
+    document.write('\n' + message.includes('gmail'));
+    document.write('\n' + message.endsWith('gmail.com'));
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>7. sets</h3>
+                <code id="code" class="language-css">
+<script>
+    var animals = new Set();
+    animals.add('dog');
+    animals.add('cat');
+    animals.add('mouse');
+    document.write('\n size : ' + animals.size);
+    animals.add('mouse');
+    document.write('\n size : ' + animals.size);
+    animals.delete('mouse');
+    document.write('\n size : ' + animals.size);
+
+    var people = ['rabin', 'john', 'julia', 'rabin'];
+    var peoples = new Set(people);
+    document.write('\n size list : ' + people.length);
+    document.write('\n size set : ' + peoples.size);
+
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>8. Arrow Function</h3>
+                <div class="click-me" style="background-color: green; width: 100px; padding: 10px; cursor: pointer;">
+                    Click Me
+                </div>
+                <code id="code" class="language-css">
+<script>
+    const years = [1990, 1965, 1982, 1937]
+
+    const ages = years.map(el => 2020 - el)
+    const agess = years.map((el, index) => ` age elemet ${index + 1} : ${2020 - el}`)
+    document.write('\n' + ages);
+    document.write('\n' + agess);
+
+    const box = {
+        color: 'green',
+        position: 1,
+        clickme: function () {
+            document.querySelector('.click-me').addEventListener('click', () => {
+                var str = `This is box no ${this.position} and it is ${this.color}`
+                alert(str)
+            })
+        }
+    }
+    box.clickme()
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>9. Destructuring</h3>
+                <code id="code" class="language-css">
+<script>
+    const [name, age] = ['Rabin', 29]
+    document.write('\n' + name);
+    document.write('\n' + age);
+
+    const obj = {
+        firstName: 'Rabin',
+        lastName: 'Phaiju'
+    }
+    const { firstName, lastName } = obj;
+    document.write('\n' + firstName);
+    document.write('\n' + lastName);
+
+    const calcAge = (year) => {
+        const age = new Date().getFullYear() - year
+        return [age, 65 - age]
+    }
+    const [agee, retirement] = calcAge(1994)
+    document.write('\n' + agee);
+    document.write('\n' + retirement);
+
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+
+    <div class="container">
+        <div class="code-wrapper">
+            <div class="container" style="padding: 4px; width: 100px;">
+                <div class="box green" style="padding: 4px;">I'm green</div>
+                <div class="box blue" style="padding: 4px;">I'm blue</div>
+                <div class="box orange" style="padding: 4px;">I'morange</div>
+            </div>
+            <pre>
+                <h3>10. Arrays</h3>
+                <code id="code" class="language-css">
+<script>
+    const boxes = document.querySelectorAll('.box');
+    Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'red');
+    //
+    for (const cur of Array.from(boxes)) {
+        if (cur.className.includes('blue')) {
+            continue
+        }
+        cur.textContent = ' I am changed'
+    }
+    //
+    var agesss = [12, 17, 8, 21, 14, 11]
+    document.write('\n' + agesss.findIndex(cur => cur == 8));
+
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>11. Spread operator</h3>
+                <code id="code" class="language-css">
+<script>
+    function addFourAges(a, b) {
+        return a + b
+    }
+
+    const sum3 = addFourAges(...agesss)
+    document.write('\n'+sum3)
+    //
+    const familyA = ['John', 'James']
+    const familyB = ['Miller', 'Marry']
+    const biggerFamily = [...familyA, 'Phaiju', ...familyB]
+    document.write('\n'+biggerFamily)
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>12. Spread operator in function --- Rest</h3>
+                <code id="code" class="language-css">
+<script>
+    function isFullAge(limit, ...years) {
+        years.forEach(cur =>
+        document.write('\n' + (limit - cur)))
+
+    }
+    isFullAge(2020, 1990, 1890, 1192);
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h3>13. Maps</h3>
+                <code id="code" class="language-css">
+<script>
+    const question = new Map();
+    question.set('question', 'What is your name?');
+    question.set(1, 'es1')
+    question.set(2, 'es2')
+    question.set(3, 'es3')
+    question.set(4, 'es4')
+    question.set(5, 'es5')
+    question.set(6, 'es6')
+
+    document.write('\n' + question.get(1));
+
+    if (question.has(4)) {
+        question.delete(4)
+        document.write('\n' + question);
+    }
+    //
+    question.forEach((value, key) => {
+        document.write(`\nThis is ${key} and its set is ${value}`)
+    })
+    //
+    for (let [key, value] of question.entries()) {
+        document.write(`\nThis is ${key} and its set is ${value}`)
+
+    }
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+        <h3>14. Classes</h3>
+                <code id="code" class="language-css">
+<script>
+    class Person6 {
+        constructor(name, yearOfBirth, job) {
+            this.nmae = name;
+            this.yearOfBirth = yearOfBirth;
+            this.job = job;
+        }
+
+        static greeting() {
+            document.write('\nGood morning')
+        }
+        calculateAge() {
+            var age = new Date().getFullYear() - parseInt(this.yearOfBirth)
+            document.write('\n'+age)
+        }
+        // dont need prototype for methods
+        // Under the hood, js converts the calculateAge to prototype
+    }
+    const per1 = new Person6('rabin', '1994', 'student')
+    per1.calculateAge()
+    Person6.greeting()
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+    <h3>15. subclasses</h3>
+                <code id="code" class="language-css">
+<script>
+    class Athlete6 extends Person6 {
+        constructor(name, yearOfBirth, job, olympicGames, medals) {
+            super(name, yearOfBirth, job);
+            this.olympicGames = olympicGames;
+            this.medals = medals
+        }
+        wonMedal() {
+            this.medals++;
+            document.write('\n'+this.medals)
+        }
+    }
+    const john1 = new Athlete6('rabin', 1994, 'swimmer', 3, 10)
+    john1.calculateAge()
+    john1.wonMedal()
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+  
+  <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <code id="code" class="language-css">
+<script>
+    class Town {
+        constructor(name, buildYear) {
+            this.name = name;
+            this.buildYear = buildYear;
+        }
+    }
+
+    class Park extends Town {
+        constructor(name, buildYear, area, numTrees) {
+            super(name, buildYear);
+            this.area = area;
+            this.numTrees = numTrees;
+        }
+        treeDesity() {
+            const desity = this.numTrees / this.area;
+            document.write(`${this.name} has a tree dessity of ${desity} trees per square meter.`);
+        }
+    }
+
+    class Street extends Town {
+        constructor(name, buildYear, length, size = 3) {
+            super(name, buildYear);
+            this.length = length;
+            this.size = size;
+        }
+        classifySteet() {
+            const classification = new Map();
+            classification.set(1, "tiny");
+            classification.set(2, "small");
+            classification.set(3, "normal");
+            classification.set(4, "big");
+            classification.set(5, "huge");
+            document.write(
+                `\n${this.name}, build in ${this.buildYear}, is a ${classification.get(this.size)} street`
+            );
+        }
+    }
+
+    const allParks = [
+        new Park("Green Park", 1978, 0.2, 215),
+        new Park("National park", 1894, 2.9, 3450),
+        new Park("Oak Park", 1953, 0.4, 967),
+    ];
+
+    const allStreet = [
+        new Street("Ocean Avenue", 1999, 1.1),
+        new Street("Evergreen Steet", 2008, 2.7, 2),
+        new Street("Sunset Boulevard", 1982, 2.5, 5),
+    ];
+
+    function calc(arr) {
+        const sum = arr.reduce((prev, cur, index) =>
+            prev + cur, 0)
+        return [sum, sum / arr.length]
+    }
+
+    function reportParks(p) {
+        document.write("\npark reports");
+        // Density
+        p.forEach((el) => el.treeDesity());
+        // Average age
+        const ages1 = p.map(el => new Date().getFullYear() - el.buildYear)
+        const [totalAge, avgAge] = calc(ages1)
+        document.write(`\nOur ${p.length} parks have an average of ${avgAge} years.`)
+
+        // Which park has more than 1000 trees
+        const i = p.map(el => el.numTrees).findIndex(el => el >= 1000)
+        document.write(`\n${p[i].name} has more than 1000 trees`)
+    }
+
+    function reportSteet(s) {
+        document.write('\nstreet report')
+        // Total and average length of the town's street
+        const [totalLength, avgLength] = calc(s.map(el => el.length))
+        document.write(`\nOur ${s.length} streets have a total length of ${totalLength} km, with an average of ${avgLength}`)
+
+        // Classify sizes
+        s.forEach(el => el.classifySteet())
+    }
+
+    reportParks(allParks);
+    reportSteet(allStreet);
+
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+</body>
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
+
+</html>

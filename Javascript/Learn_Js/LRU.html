@@ -1,4 +1,19 @@
-class LRU{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRU</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <code id="code" class="language-css">
+                  <script>
+                    class LRU{
     constructor(capacity){
         this.capacity = capacity;
         this.cache = new Map();
@@ -36,4 +51,15 @@ cache.putItem('b',7);
 cache.putItem('c',8);
 cache.putItem('a',9);
 cache.putItem('d',10);
-console.log(cache);
+document.write('\n',cache.capacity);
+document.write('\n',cache.cache.get('a'));
+                  </script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+</body>
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
+</html>

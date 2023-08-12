@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let Const Var</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <code id="code" class="language-css">
+<script>
+    var name = 'rabin' // global scope
+    // if,for,function
+    {
+        var name1 = 'john' // local scope
+        console.log(name1 + ' from function')
+    }
+    document.write('\n' + name1 + " from global scope")
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <code id="code" class="language-css">
+<script>
+    // if,for,function
+    {
+        let roll = 29 // block scope
+        document.write('\n' + roll + ' from function')
+    }
+    document.write('\n' + roll + " from global scope");// cannot call roll from here
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <code id="code" class="language-css">
+<script>
+    const pi = 3.14 // block scope // reference cannot be changed
+    // pi = 'rabin';// cannot change type
+    document.write('\n'+pi)
+    const object1 = { name: 'rabin' }
+    object1.roll = 29
+    document.write('\n'+object1)
+    // object1 = 'rabin'; // cannot change object
+
+    const nums = [1, 2, 3, 4, 5]
+    nums.push(6) // can add new element on array but array type cannot be changed
+    // nums = [1, 2, 3]; // cannot re-declare array
+    document.write('\n'+nums);
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+</body>
+
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
+
+</html>

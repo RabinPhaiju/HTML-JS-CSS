@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Function</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h1>Callback Function</h1>
+                <code id="code" class="language-css">
+                    <p>Any function that is passed as an argument is called a callback function.</p>
+                <p>A callback is a function that is to be executed after another function has finish executing.</p>
+                <i>Far too many people are intimidated by javascript callback functions! They are simple, take this example. The
+                    console.log function is being passed as a callback to myFunc. It gets executed when setTimeout completes. That's
+                    all there is to it!</i>
+                    function myFunc(text, callback) {
+                        setTimeout(function() {
+                            callback(text);
+                        }, 2000);
+                    }
+                    
+                    myFunc('Hello world!', console.log);
+                    // 'Hello world!'
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>  
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h2>Functions are object in JavaScript</h2>
+                <code id="code" class="language-css">
+                    <p>We can pass objects to function as parameters. We can pass and call functions inside other functions.</p>
+                    <p>We can also return functions from other functions.</p>
+                    <h6>Why do we need callback function<br />
+                        <p>Js is an event driven language.-> Instead of waiting for a response before moving on, Js will keep executing
+                            while listening for other events.</p>
+                        <p>Callbacks are a way to make sure certain code doesn't execute until other code has already finished
+                            execution.</p>
+                        <p>Call me back after you done your job.</p>
+                        <p>Execute a function after another function is executed.</p>
+                    </h6>
+                    <h4>Anonymous Func -> function having no name.<br /> setTimeout(function(){console.log('anonymous
+                        function')})<br />
+                        setTimeout()=>{console.log('Arrow anonymous function')} </h4>
+                
+                    <h2>Callback functions are also used in Event Declaration.</h2>
+                    <button id="callback">Click me Console</button>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h1>Console</h1>
+                <code id="code" class="language-css">
+                    function print(callback) {
+                        console.log("Call back function")
+                        // print function takes a callback function as parameter and calls it inside this function.
+                        callback()
+                    }
+                
+                    const message = function () {
+                        console.log("Hello World")
+                    }
+                
+                    setTimeout(print(message), 2000)
+                    setTimeout(message, 2000)
+                
+                    const perOne = (friend, callback) => {
+                        console.log(`Hey what's up, I am talking to  ${friend}. I will callback later.`)
+                        callback()
+                    }
+                    const perTwo = () => {
+                        console.log('Hey I will called you. Why did you call me?')
+                    }
+                
+                    perOne('John', perTwo)
+                
+                    window.onload = function () {
+                        document.getElementById("callback").addEventListener('click', function () {
+                            console.log("Callback function")
+                        })
+                    }
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+</body>
+<script>
+    function print(callback) {
+        console.log("Call back function")
+        // print function takes a callback function as parameter and calls it inside this function.
+        callback()
+    }
+
+    const message = function () {
+        console.log("Hello World")
+    }
+
+    setTimeout(print(message), 2000)
+    setTimeout(message, 2000)
+
+    const perOne = (friend, callback) => {
+        console.log(`Hey what's up, I am talking to  ${friend}. I will callback later.`)
+        callback()
+    }
+    const perTwo = () => {
+        console.log('Hey I will called you. Why did you call me?')
+    }
+
+    perOne('John', perTwo)
+
+    window.onload = function () {
+        document.getElementById("callback").addEventListener('click', function () {
+            console.log("Callback function")
+        })
+    }
+</script>
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
+
+</html>
