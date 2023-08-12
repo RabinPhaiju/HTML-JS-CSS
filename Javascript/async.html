@@ -6,39 +6,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Async</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
 </head>
 
 <body>
-    <h2>Asynchronous JavaScript</h2>
-    <p>Once you get the hang of javascript promises, you might like async await, which is just "syntactic sugar" on top
-        of promises. In the following example we create an async function and within that we await the greeter promise.
-    </p>
-    <pre>const greeter = new Promise((res, rej) => {
-        setTimeout(() => res('Hello world!'), 2000);
-    });
-    
-    async function myFunc() {
-        const greeting = await greeter;
-        console.log(greeting);
-    }
-    
-    myFunc();
-    // 'Hello world!'</pre>
-    <p>Async functions return a promise
-        One important thing to note here is that the result of an async function is a promise.</p>
-    <pre>
-            const greeter = new Promise((res, rej) => {
-                setTimeout(() => res('Hello world!'), 2000);
-            });
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
+                <h2>Asynchronous JavaScript</h2>
+                <br>
+                <p>Once you get the hang of javascript promises, you might like async await, which is just "syntactic sugar" on topof promises. In the following example we create an async function and within that we await the greeter promise.</p>
+                <code id="code" class="language-css">
+                    const greeter = new Promise((res, rej) => {
+                        setTimeout(() => res('Hello world!'), 2000);
+                    });
+                    
+                    async function myFunc() {
+                        const greeting = await greeter;
+                        console.log(greeting);
+                    }
+                    
+                    myFunc();
+                    // 'Hello world!'
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+          <div class="code-wrapper">
+            <pre>
+                <p>Async functions return a promiseOne important thing to note here is that the result of an async function is a promise.</p>
+                <code id="code" class="language-css">
+                    const greeter = new Promise((res, rej) => {
+                        setTimeout(() => res('Hello world!'), 2000);
+                    });
+                    
+                    async function myFunc() {
+                        return await greeter;
+                    }
+                    
+                    console.log(myFunc()); // => Promise {}
+                    
+                    myFunc().then(console.log); // => Hello world!
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+          <pre>
+              <h2>Terminal.</h2>
+              <code id="code" class="language-css">
+                const second = () => {
+                    setTimeout(() => {
+                        console.log('Second')
+                    }, 2000)
+                }
             
-            async function myFunc() {
-                return await greeter;
-            }
+                const first = () => {
+                    console.log('Hey There')
+                    second()
+                    console.log('The End')
+                }
+                first()
             
-            console.log(myFunc()); // => Promise {}
-            
-            myFunc().then(console.log); // => Hello world!
-        </pre>
+                const getIDs = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve([1, 2, 3, 4, 5])
+                    }, 1500)
+                })
+                getRecipeAW = async () => {
+                    const IDs = await getIDs
+                    console.log(IDs)
+                    const ids = await getIDs
+                    console.log(ids)
+                }
+                getRecipeAW()
+              </code>
+          </pre>
+          <button id="copy-button">Copy</button>
+        </div>
+  </div>
 </body>
 <script>
     const second = () => {
@@ -73,5 +124,8 @@
     //     console.log('Error', error)
     // })
 </script>
+
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
 
 </html>
