@@ -1,3 +1,21 @@
+# What is JavaScript?
+    - A high language interpreted programming language, can be used on the client side as well as the server-side with node.js
+
+# JavaScript used for.
+    - DOM manipulation
+    - Event Handling (UserAction)
+    - Asynchronous Requests
+    - Animation and effects
+    - Data manipulation (sort, fliter,map) etc.
+    - Store Data (cookies, local Storage) etc.
+    - Single Page Application
+    - Create APIs & Web services (node, deno)
+
+# Console
+    - console is object in js. (having property and method)
+    - log() is function.
+
+
 # Functions is First Class Citizens
 
     - In Js, we can assign a function to a variable.
