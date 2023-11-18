@@ -36,4 +36,13 @@ console.log(amount, typeof amount);
 amount = `${amountt}`;
 console.log(amount, typeof amount);
 
+// NaN -> Not a Number
+console.log('--- Type Conversion NaN to string---');
+amount2 = 'hello';
+output2 = parseInt(amount2);
+console.log(output2, typeof output2);
 
+console.log(Math.sqrt(-1));
+console.log(1 + NaN);
+console.log(undefined + undefined);
+console.log('foo'/2);

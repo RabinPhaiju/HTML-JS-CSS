@@ -38,6 +38,26 @@
     <div class="container">
         <div class="code-wrapper">
             <pre>
+                <h1>Strings</h1>
+                <code id="code" class="language-css">
+<script>
+const nameC = 'Rabin';
+const ageC = 23;
+let stringC = 'Hello, my name is ' + nameC + ' and I am ' + ageC + ' years old.';
+
+document.write(stringC);
+stringC = `Hello, my name is ${nameC} and I am ${ageC} years old..`;
+
+document.write('\n',stringC);
+</script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="code-wrapper">
+            <pre>
                 <h1>Console</h1>
                 <code id="code" class="language-css">
                     var job, isMarried;
@@ -119,5 +139,7 @@
 <script src="dataTypes.js"></script>
 <script src="primitive_vs_ref.js"></script>
 <script src="type_conversion.js"></script>
+<script src="operators.js"></script>
+<script src="type_coercion.js"></script>
 
 </html>
