@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="code-wrapper">
+            <h2>What is Function Declaration </h2>
+            <p>Also called function defination or function statement.</p>
+            <pre>
+                <code id="code" class="language-css">
+                    function square(num){
+                        return num*num;
+                    }
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+          <div class="code-wrapper">
+            <h2>What is Function Expression </h2>
+            <p>
+                When a function is stored in a variable.
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    const square = function(num){
+                        return num*num;
+                    }
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+          <div class="code-wrapper">
+            <h2> What is First Class Function. </h2>
+            <p>
+                Where a function can be treated like a variable, those functions are called first class function.<br>
+                These functions can be passed into another functions can be manipulated and returned from those function. Basically a variable can do.<br>
+                So functions are first class function in JS.
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    function square(num){
+                        return num*num;
+                    }
+
+                    function displaySquare(fun){
+                        console.log("square", fun(5));
+                    }
+
+                    displaySquare(square);
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>   
+          <div class="code-wrapper">
+            <h2> What is IIFE </h2>
+            <p>
+                Immediately invoked function expression
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    (function square(num){
+                         console.log(num*num);
+                    })(5);
+
+                    (function (x){
+                        return (function (y){
+                            console.log(x); // 1
+                        })(2);
+                    })(1);
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+          
+          <div class="code-wrapper">
+            <h2> Function Scope </h2>
+            <p>
+                
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    for(let i =0 ; i<5 ; i++){
+                        setTimeout(function(){
+                            console.log(i); // 01234
+                        }, i*1000);
+                    }
+                    for(var i =0 ; i<5 ; i++){
+                        setTimeout(function(){
+                            console.log(i); // 44444
+                        }, i*1000);
+                    }
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+          
+          <div class="code-wrapper">
+            <h2> Function Hoisting </h2>
+            <p>
+               Functions are hoisted completely to the top of their scope. 
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+<script>
+    functionName();
+function functionName(){
+    document.write('\n' + "Hello")
+}
+</script>
+<script>
+    var x = 21;
+    var fun = function(){
+        document.write('\n',x);
+        var x = 20;
+    }
+    fun();
+</script>
+<p>
+    We have global scope of x.<br>
+    In local scope x is present.<br>
+    Hoisting is 2 step process:<br>
+    1. First is initialize the complete code. (init global scope.)<br>
+    2. Then it init local scope (first host this variable in top of this scope) So in this scope. x is present and is undefined right now.
+
+    If we have variable in local scope we dont go to global scope.
+</p>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>     
+          <div class="code-wrapper">
+            <h2> Params vs argument </h2>
+            <pre>
+                <code id="code" class="language-css">
+                    function square(num){ // num is params
+                        return num*num;
+                    }
+                    square(5); // 5 is argument
+
+                    <script>
+function multiply(...nums){
+    document.write('\n',nums[0]*nums[1]);
+}
+let arr = [5,2];
+multiply(...arr);
+                    </script>
+
+                    <script>
+const fn = (a,x,y,...nums)=>{ // rest operator must be last parameter
+    document.write('\n',x, ' ' ,y,' ',nums);
+}
+fn(1,2,3,4,5,6);
+                    </script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>     
+          <div class="code-wrapper">
+            <h2> Callback Function </h2>
+            <p>
+                A function passed into another function as an argument. Which is then invoked inside the outer function.<br>
+                map, filter, settimeout, reduce
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    <script>
+function greeting (name){
+    document.write('\n',name);
+}
+
+function processUserInput(callback){
+    let name = 'Rabin';
+    callback(name); // called
+}
+processUserInput(greeting); // this greeting is a callback function.
+                    </script>
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>     
+          <div class="code-wrapper">
+            <h2> What is Function Expression </h2>
+            <p>
+                
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+          </div>
+          
+    </div>
+</body>
+
+<script src="main.js" defer></script>
+<script src="prism.js"></script>
+
+</html>
