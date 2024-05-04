@@ -1,4 +1,4 @@
-# [HTML](./Html/)-[JS](./Javascript/index.html)-[CSS](./CSS/index.html)
+# [HTML](./Html/index.html)-[JS](./Javascript/index.html)-[CSS](./CSS/index.html)
 
 1. [Portfolio](https://rabinphaiju.github.io/HTML-JS-CSS/Porfolio/)
 2. [UI 1](https://rabinphaiju.github.io/HTML-JS-CSS/UI%201/)

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../prism.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="code-wrapper">
+            <h2>1. Doctype</h2>
+            <p>The declaration is not an HTML tag. It is an "information" to the browser about what document type to expect.In HTML 5, the declaration is simple:</p>
+            <pre>
+                &lt;!DOCTYPE html>
+            </pre>
+        </div>
+
+        <div class="code-wrapper">
+            <h2>2. Use of head tag</h2>
+            <p>The head tag is an HTML element used to define the head section of an HTML document. The head section contains metadata, which simply means data about data. This means information in the head tag is not displayed on the page but the information is used by browsers and by search engines.</p>
+            </br>
+            <p>&lt;title>: This element is used to define the title of the document, which is displayed in the browser's title bar and is often used by search engines to describe the page.</p>
+            </br><p>&lt;meta>: This element is used to define metadata about the document, such as the character encoding, description of the page, keywords, and author.</p>
+            </br><p>&lt;link>: This element is used to link to external resources, such as stylesheets or scripts, that are used to format or enhance the page.</p>
+            </br><p>&lt;script > This element is used to define JavaScript code that is executed on the page.</p>
+            <pre>
+                    &lt;head>
+                        head content goes here
+                    &lt;/head>
+            </pre>
+            <button id="copy-button">Copy</button>
+        </div>
+
+        <div class="code-wrapper">
+            <h2> 3. Where to import js </h2>
+            <p>
+                <h4>1. At the end of the body</h4> Placing 'script' tags at the end of the 'body' section is a common practice because it allows the HTML content to load first before the JavaScript is executed. This can improve perceived page load speed and ensures that the DOM (Document Object Model) is fully parsed before JavaScript code runs. However, scripts loaded here won't be able to manipulate elements that appear earlier in the document unless they wait for the DOM to be fully loaded.
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                        &lt;!DOCTYPE html>
+                        &lt;html lang="en">
+                        &lt;head>
+                            &lt;meta charset="UTF-8">
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            &lt;title>Document</title>
+                            &lt;/head>
+                            &lt;body>
+                                &lt;!-- Your HTML content here -->
+                                &lt;!-- JavaScript imports -->
+                                &lt;script src="script1.js"></script>
+                                &lt;script src="script2.js"></script>
+                            &lt;/body>
+                        &lt;/html>
+
+                </code>
+            </pre>
+            <p>
+                <h4>2. In the head</h4> While it's generally recommended to put scripts at the end of the body, there are cases where you might need to include scripts in the &lt;head> section. For example, if your script needs to be loaded before rendering any content on the page, such as initializing analytics or setting up global configurations, then placing it in the <head> might be necessary.
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                        &lt;!DOCTYPE html>
+                        &lt;html lang="en">
+                        &lt;head>
+                            &lt;meta charset="UTF-8">
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            &lt;title>Document</title>
+                            &lt;script src="script1.js"></script>
+                            &lt;script src="script2.js"></script>
+                            &lt;/head>
+                            &lt;body>
+                                &lt;!-- Your HTML content here -->
+                                &lt;!-- JavaScript imports -->
+                            &lt;/body>
+                        &lt;/html>
+
+                </code>
+            </pre>
+            <p><h4>3. Async or defer attributes</h4> If you need to include scripts in the &lt;head> for performance reasons but want to ensure they don't block rendering or delay the DOMContentLoaded event, you can use the async or defer attributes. These attributes tell the browser to load the script asynchronously or defer its execution until after the document is parsed, respectively.</p>
+            <pre>
+                <code id="code" class="language-css">
+                    &lt;script src="script.js" async></script>
+                    &lt;script src="script.js" defer></script>
+                    </code>
+            </pre>
+        </div> 
+        
+        <div class="code-wrapper">
+            <h2> 4. defer vs after body import </h2>
+            <p>
+                <h4>1. Placing Scripts at the End of the Body:</h4>
+                    Placing scripts at the end of the body means that the browser loads and executes the scripts after it has parsed and rendered the HTML content above them.
+                    This approach ensures that HTML content is displayed to the user as quickly as possible, without waiting for scripts to be fetched and executed.
+                    Scripts placed at the end of the body can still manipulate the DOM and interact with HTML elements above them.
+                    However, scripts in this position may still block other resources (like images) from loading if they are large or take a significant amount of time to execute.
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    &lt;body>
+                        &lt;!-- HTML content -->
+                        
+                        &lt;!-- JavaScript imports -->
+                        &lt;script src="script1.js"></script>
+                        &lt;script src="script2.js"></script>
+                    &lt;/body>
+                </code>
+            </pre>
+            <p>
+                <h4>2. Using the defer Attribute:</h4>
+                    The defer attribute is applied to &lt;script> tags and indicates that the script should be executed after the HTML content has been parsed, but before the DOMContentLoaded event fires.
+                    Scripts with the defer attribute are downloaded asynchronously and do not block the parsing of HTML.
+                    Multiple scripts with the defer attribute will execute in the order they appear in the document, but they will not necessarily execute in the order they are fetched.
+                    Unlike scripts placed at the end of the body, scripts with defer are still able to access elements in the &lt;head> section of the document.
+                    Using defer allows you to keep scripts in the &lt;head> section for better organization without sacrificing performance.
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                        &lt;head>
+                        &lt;!-- JavaScript imports with defer attribute -->
+                        &lt;script src="script1.js" defer></script>
+                        &lt;script src="script2.js" defer></script>
+                        &lt;/head>                    
+                </code>
+            </pre>
+        </div>   
+
+    <div class="code-wrapper">
+            <h2> 5. async tag in import js. </h2>
+            <p>
+                <h4>Asynchronous Execution:</h4>
+                    When a script with the async attribute is encountered, the browser will continue to parse the HTML document while the script is being fetched from the server.
+                    Once the script is downloaded, it will be executed asynchronously, meaning that it will execute whenever it finishes downloading, regardless of the order in which it was encountered in the HTML document.
+                    Scripts loaded with async do not guarantee any particular order of execution, so they should not rely on other scripts or DOM elements being available at the time of execution.
+                    Multiple scripts with the async attribute may execute out of order, which can potentially lead to race conditions or other unintended behavior if scripts depend on each other.
+            </p></br>
+            <p>
+                <h4>Considerations:</h4>
+                    While async can improve page load performance by allowing scripts to be fetched asynchronously, it's important to be cautious when using it, especially for scripts that have dependencies or need to execute in a specific order.
+                    Scripts that rely on other scripts or on the DOM being fully loaded should generally not use the async attribute, as it may lead to unpredictable behavior.
+                    For scripts with dependencies or those that need to execute in a specific order, consider using the defer attribute or placing the scripts in the desired order within the document.
+            </p>
+            <pre>
+                <code id="code" class="language-css">
+                    &lt;!DOCTYPE html>
+                    &lt;html lang="en">
+                    &lt;head>
+                        &lt;meta charset="UTF-8">
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        &lt;title>Document</title>
+                        &lt;!-- JavaScript imports with async attribute -->
+                        &lt;script src="script1.js" async></script>
+                        &lt;script src="script2.js" async></script>
+                    &lt;/head>
+                    &lt;body>
+                        &lt;!-- Your HTML content here -->
+                    &lt;/body>
+                    &lt;/html>
+                </code>
+            </pre>
+        </div>   
+
+        <div class="code-wrapper">
+            <h2> 6. Custom Html tags </h2>
+            <span>
+                Define the Custom Element:
+                <li>Create a JavaScript class that extends HTMLElement</li>
+                <li>Customize its behavior, such as setting its content or styling, inside the constructor.</li>
+                Register the Custom Element:
+                <li>Use customElements.define() to associate your custom class with a tag name.</li>
+                Use the Custom Element:
+                <li>In your HTML document, use the custom tag you've defined, just like any other HTML element.</li>
+                <li>The browser will recognize and render your custom tag, applying the behavior you defined in the class constructor.</li>
+            </span>
+        </div>
+
+        <div class="code-wrapperr">
+            <h2> 7. diff inline and block. </h2>
+                Inline Elements:
+                    <li>Inline elements do not start on a new line; they flow within the content and only take up as much width as necessary.</li>
+                        <li>Examples of inline elements include &lt;span>, &lt;a>, &lt;strong>, &lt;em>, &lt;img>, and &lt;br>.</li>
+                            <li>Inline elements can be nested within block-level elements.</li>
+                Block-level Elements:
+                <li>Block-level elements always start on a new line and take up the full width available, pushing subsequent elements to a new line.</li>
+                    <li>Examples of block-level elements include &lt;div>, &lt;p>, &lt;h1> to vh6>, &lt;ul>, &lt;ol>, and &lt;li>.</li>
+                    <li>Block-level elements cannot be nested within inline elements; they can only contain other block-level or inline elements.</li>
+                    Padding:
+                    <li>Inline elements can have padding applied to them, but it typically affects the space within the element rather than around it.</li>
+                        <li>Horizontal padding (padding-left and padding-right) can increase the space between the text and the edges of the inline element.</li>
+                            <li>Vertical padding (padding-top and padding-bottom) may not have any visible effect on inline elements since they don't have a fixed height by default.</li>
+                    Margin:
+                    <li>Margins applied to inline elements may not behave as expected. Margins will not push adjacent inline elements away.</li>
+                        <li>Instead, margins may collapse with adjacent margins or may not produce any visible effect at all, depending on the specific context and the layout of the surrounding elements.</li>
+                    Inline Block and Inline-table Elements:
+                    <li>Elements styled as display: inline-block or display: inline-table combine characteristics of both inline and block-level elements.</li>
+                        <li>These elements can have padding and margins applied to them, and they respect the box model more similarly to block-level elements.</li>
+                            <li>vHowever, they still flow inline within the content like regular inline elements.</li>
+   
+          
+    </div>
+
+    <div class="code-wrapper">
+        <h2> 8. replaced and non-replaced element </h2>
+        <ol><li><p><strong>Replaced Inline Elements:</strong></p><ul><li>Replaced inline elements are those whose content is replaced by an external resource, such as an image, video, or form control.</li><li>The content of replaced inline elements is not directly rendered by the browser; instead, it is replaced by the content of the external resource.</li><li>Examples of replaced inline elements include <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, and <code>&lt;iframe&gt;</code>.</li><li>Replaced inline elements have intrinsic dimensions and are replaced by the content they contain. For example, an <code>&lt;img&gt;</code> element is replaced by the image it references.</li></ul></li><li><p><strong>Non-Replaced Inline Elements:</strong></p><ul><li>Non-replaced inline elements are those whose content is rendered directly by the browser without replacement.</li><li>The content of non-replaced inline elements is rendered as part of the document's flow, and it can include text, links, emphasis, strong emphasis, and other inline-level elements.</li><li>Examples of non-replaced inline elements include <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code>, and <code>&lt;br&gt;</code>.</li><li>Non-replaced inline elements do not have intrinsic dimensions defined by their content and are rendered as part of the surrounding text flow.</li></ul></li></ol>
+    </div>
+
+    <div class="code-wrapper">
+        <h2>9. Box Model</h2>
+        In HTML, every element on a webpage is rendered as a rectangular box, and the box model is a way to represent and control the dimensions and spacing of these boxes. Here's an explanation of the box model components in HTML:
+        <li>Content</li>
+        <li>Padding</li>
+        <li>Border</li>
+        <li>Margin</li>
+    </div>
+
+    <div class="code-wrapper">
+        <h2>Inline element dont follow box model</h2>
+        <ol><li><p><strong>Content Box</strong>: For inline elements, the content box wraps around the text or content it contains. The width and height properties affect the space taken up by the content, but they do not affect the layout of surrounding elements. Inline elements do not have explicit width and height by default; they expand horizontally to fit their content.</p></li><li><p><strong>Padding, Border, Margin</strong>: Inline elements technically have padding, border, and margin properties, but they don't behave the same way as with block-level elements.</p><ul><li><strong>Padding</strong>: Padding can be applied to inline elements, but it affects the space inside the content box, not outside it. Padding will increase the space between the content and the border of the element.</li><li><strong>Border</strong>: Border can be applied to inline elements, but it doesn't change the flow of content around the element. The border will wrap closely around the content without affecting the surrounding text.</li><li><strong>Margin</strong>: Margins can be applied to inline elements, but they typically don't push other elements away or create spacing between adjacent inline elements. Instead, margins may collapse with adjacent margins or may not produce any visible effect at all, depending on the context.</li></ul></li></ol>
+    </div>
+
+
+    </body>
+
+<script src="../main.js" defer></script>
+<script src="../prism.js"></script>
+
+</html>
