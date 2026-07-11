@@ -204,6 +204,28 @@
           
     </div>
 
+
+    <div class="code-wrapperr">
+        <h2> 7.1 what happen if we have div.flex and spans inside it. spans have height. will it take height. </h2>
+        <pre>
+            <code id="code" class="language-css">
+                &lt;!DOCTYPE html>
+                &lt;html lang="en">
+                &lt;body>
+                    &lt;div class="flex">
+                        &lt;span style="height: 100px;">something &lt;/span>
+                        &lt;span>something &lt;/span>
+                    &lt;/div>                        
+                &lt;/body>
+                &lt;/html>
+            </code>
+        </pre>
+        <h2>Answer: any items inside flex will take flex items. Flex items have block properties </h2>
+        <h3>But: flex-center does take full height, which is due to stretch properties</h3>
+
+      
+</div>
+
     <div class="code-wrapper">
         <h2> 8. replaced and non-replaced element </h2>
         <ol><li><p><strong>Replaced Inline Elements:</strong></p><ul><li>Replaced inline elements are those whose content is replaced by an external resource, such as an image, video, or form control.</li><li>The content of replaced inline elements is not directly rendered by the browser; instead, it is replaced by the content of the external resource.</li><li>Examples of replaced inline elements include <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, and <code>&lt;iframe&gt;</code>.</li><li>Replaced inline elements have intrinsic dimensions and are replaced by the content they contain. For example, an <code>&lt;img&gt;</code> element is replaced by the image it references.</li></ul></li><li><p><strong>Non-Replaced Inline Elements:</strong></p><ul><li>Non-replaced inline elements are those whose content is rendered directly by the browser without replacement.</li><li>The content of non-replaced inline elements is rendered as part of the document's flow, and it can include text, links, emphasis, strong emphasis, and other inline-level elements.</li><li>Examples of non-replaced inline elements include <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code>, and <code>&lt;br&gt;</code>.</li><li>Non-replaced inline elements do not have intrinsic dimensions defined by their content and are rendered as part of the surrounding text flow.</li></ul></li></ol>
