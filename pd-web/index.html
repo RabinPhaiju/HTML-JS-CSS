@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experience the ultimate Nagarkot Zipline adventure and luxury hospitality at Prem Durbar. Scroll to feel the rush.">
+  <title>Prem Durbar — Nagarkot Zipline & Luxury Resort</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== Loading Screen ==================== -->
+  <div class="loader-overlay" id="loader">
+    <div class="loader-logo">PREM DURBAR</div>
+    <div class="loader-text">Preparing your adventure</div>
+    <div class="loader-bar-container">
+      <div class="loader-bar" id="loader-bar"></div>
+    </div>
+    <div class="loader-percent" id="loader-percent">0%</div>
+  </div>
+
+  <!-- ==================== Scroll Progress Bar ==================== -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ==================== Navbar ==================== -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-brand">PREM<span>DURBAR</span></a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#book" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==================== Hero — Scroll-Driven Canvas ==================== -->
+  <section class="scroll-container">
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Gradient vignette overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Intro title (fades in after auto-play) -->
+    <div class="hero-title-container">
+      <h1 class="hero-title">
+        The Ultimate <span class="accent">Rush.</span><br>
+        The Perfect <span class="accent">Stay.</span>
+      </h1>
+      <p class="hero-subtitle">Soar over Nagarkot's canopy. Indulge in Himalayan luxury.</p>
+    </div>
+
+    <!-- Scroll prompt -->
+    <div class="scroll-prompt">
+      <span class="scroll-prompt-text">Scroll to explore</span>
+      <div class="scroll-prompt-arrow"></div>
+    </div>
+
+    <!-- Milestone overlays (appear at key scroll points) -->
+    <div class="milestone-overlay milestone-left" id="milestone-1">
+      <span class="milestone-tag">The Launch</span>
+      <h2 class="milestone-heading">Feel the altitude<br>at 2,174m</h2>
+      <p class="milestone-body">Step off the platform from the high ridges of Prem Durbar. Feel the pure mountain wind as gravity sets you in motion over deep green valleys.</p>
+    </div>
+
+    <div class="milestone-overlay milestone-right" id="milestone-2">
+      <span class="milestone-tag">The Flight</span>
+      <h2 class="milestone-heading">Asia's premier<br>zipline ride</h2>
+      <p class="milestone-body">Fly Classic or choose the thrilling Superman style. Experience 1.95 kilometers of breathtaking, uninterrupted aerial flight.</p>
+    </div>
+
+    <div class="milestone-overlay milestone-center" id="milestone-3">
+      <span class="milestone-tag">The Arrival</span>
+      <h2 class="milestone-heading">Land directly at<br>our resort gates</h2>
+      <p class="milestone-body">Your flight concludes, and your royal retreat begins. Transition seamlessly from high-altitude adventure into the comforts of Prem Durbar.</p>
+    </div>
+  </section>
+
+  <!-- ==================== Experience Section ==================== -->
+  <section class="content-section" id="experience">
+    <span class="section-tag">The Experience</span>
+    <h2 class="section-heading">Adrenaline & elegance,<br>perfectly balanced</h2>
+    <p class="section-body">
+      Prem Durbar & Nagarkot Zipline Resort is Nepal's iconic hill resort where thrill meets heritage hospitality.
+      Fly through pine forests on the second-longest zipline in Asia, and end your day watching the sunset turn the Himalayan range into gold.
+    </p>
+  </section>
+
+  <!-- ==================== Features Grid ==================== -->
+  <section class="content-section" id="features">
+    <span class="section-tag">Why Prem Durbar</span>
+    <h2 class="section-heading">Everything you need<br>for an unforgettable escape</h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏔️</div>
+        <h3 class="feature-title">Nagarkot Zipline</h3>
+        <p class="feature-desc">Soar through the air on a massive 1.95km flight path. Fly Classic style or try the headfirst Superman position.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏨</div>
+        <h3 class="feature-title">Luxury Rooms</h3>
+        <p class="feature-desc">Plush accommodations designed with high-end comforts, private balconies, and stunning landscape views.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🍽️</div>
+        <h3 class="feature-title">Royal Dining</h3>
+        <p class="feature-desc">Taste authentic Nepalese delicacies and international favorites at our premium restaurant and bar.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌅</div>
+        <h3 class="feature-title">Sunset & Sunrise</h3>
+        <p class="feature-desc">Watch spectacular sunrises over the snow-capped Himalayan peaks right from our terraced viewpoints.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌲</div>
+        <h3 class="feature-title">Nature Treks</h3>
+        <p class="feature-desc">Embark on guided walks through rustic Sankhu paths, dense pine forests, and scenic Nagarkot hills.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🛎️</div>
+        <h3 class="feature-title">Five-Star Care</h3>
+        <p class="feature-desc">24-hour reception, curated adventure packages, and warm Nepalese hospitality to elevate your stay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA Section ==================== -->
+  <section class="cta-section" id="book">
+    <span class="section-tag">Ready?</span>
+    <h2 class="cta-heading">Your Himalayan adventure<br>starts here</h2>
+    <p class="cta-body">
+      Book your room and zipline experience at Prem Durbar & Nagarkot Zipline Resort today. Experience Nepal like never before.
+    </p>
+    <a href="#" class="cta-button">
+      Book Zipline & Stay →
+    </a>
+  </section>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="footer-brand">PREM<span>DURBAR</span></div>
+    <p class="footer-text">Adventure Meets Luxury — Nagarkot & Sankhu, Nepal</p>
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Zipline</a></li>
+      <li><a href="#">Accommodations</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Prem Durbar & Nagarkot Zipline Resort. All rights reserved.</p>
+  </footer>
+
+  <!-- ==================== Scripts ==================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
